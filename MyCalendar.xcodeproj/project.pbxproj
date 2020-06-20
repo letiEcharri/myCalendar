@@ -10,12 +10,19 @@
 		F0F7B16E249E41BF005178A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B16D249E41BF005178A1 /* AppDelegate.swift */; };
 		F0F7B170249E41BF005178A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */; };
 		F0F7B173249E41BF005178A1 /* MyCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B171249E41BF005178A1 /* MyCalendar.xcdatamodeld */; };
-		F0F7B175249E41BF005178A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B174249E41BF005178A1 /* ContentView.swift */; };
 		F0F7B177249E41BF005178A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F7B176249E41BF005178A1 /* Assets.xcassets */; };
 		F0F7B17A249E41BF005178A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F7B179249E41BF005178A1 /* Preview Assets.xcassets */; };
 		F0F7B17D249E41BF005178A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F7B17B249E41BF005178A1 /* LaunchScreen.storyboard */; };
 		F0F7B188249E41C0005178A1 /* MyCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B187249E41C0005178A1 /* MyCalendarTests.swift */; };
 		F0F7B193249E41C0005178A1 /* MyCalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B192249E41C0005178A1 /* MyCalendarUITests.swift */; };
+		F0F7B1A9249E4779005178A1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B1A8249E4779005178A1 /* BaseViewController.swift */; };
+		F0F7B1AC249E47B8005178A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B1AA249E47B8005178A1 /* HomeViewController.swift */; };
+		F0F7B1AD249E47B8005178A1 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F7B1AB249E47B8005178A1 /* HomeViewController.xib */; };
+		F0F7B1AF249E49EE005178A1 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B1AE249E49EE005178A1 /* BaseRouter.swift */; };
+		F0F7B1B1249E4B67005178A1 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B1B0249E4B67005178A1 /* HomeRouter.swift */; };
+		F0F7B1B3249E4C48005178A1 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B1B2249E4C48005178A1 /* HomePresenter.swift */; };
+		F0F7B1B5249E4C91005178A1 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B1B4249E4C91005178A1 /* BasePresenter.swift */; };
+		F0F7B1B7249E4F1F005178A1 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B1B6249E4F1F005178A1 /* MainRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +47,6 @@
 		F0F7B16D249E41BF005178A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F0F7B172249E41BF005178A1 /* MyCalendar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyCalendar.xcdatamodel; sourceTree = "<group>"; };
-		F0F7B174249E41BF005178A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F0F7B176249E41BF005178A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0F7B179249E41BF005178A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0F7B17C249E41BF005178A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +57,14 @@
 		F0F7B18E249E41C0005178A1 /* MyCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F7B192249E41C0005178A1 /* MyCalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalendarUITests.swift; sourceTree = "<group>"; };
 		F0F7B194249E41C0005178A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0F7B1A8249E4779005178A1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F0F7B1AA249E47B8005178A1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F0F7B1AB249E47B8005178A1 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		F0F7B1AE249E49EE005178A1 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		F0F7B1B0249E4B67005178A1 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		F0F7B1B2249E4C48005178A1 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		F0F7B1B4249E4C91005178A1 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		F0F7B1B6249E4F1F005178A1 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +115,10 @@
 		F0F7B16C249E41BF005178A1 /* MyCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				F0F7B1A5249E4749005178A1 /* core */,
+				F0F7B1A0249E46C3005178A1 /* presentation */,
 				F0F7B16D249E41BF005178A1 /* AppDelegate.swift */,
 				F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */,
-				F0F7B174249E41BF005178A1 /* ContentView.swift */,
 				F0F7B176249E41BF005178A1 /* Assets.xcassets */,
 				F0F7B17B249E41BF005178A1 /* LaunchScreen.storyboard */,
 				F0F7B17E249E41BF005178A1 /* Info.plist */,
@@ -137,6 +152,76 @@
 				F0F7B194249E41C0005178A1 /* Info.plist */,
 			);
 			path = MyCalendarUITests;
+			sourceTree = "<group>";
+		};
+		F0F7B1A0249E46C3005178A1 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F0F7B1A1249E46D9005178A1 /* home */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		F0F7B1A1249E46D9005178A1 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				F0F7B1A4249E46EF005178A1 /* presenter */,
+				F0F7B1A3249E46E8005178A1 /* router */,
+				F0F7B1A2249E46E1005178A1 /* view */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		F0F7B1A2249E46E1005178A1 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F0F7B1AA249E47B8005178A1 /* HomeViewController.swift */,
+				F0F7B1AB249E47B8005178A1 /* HomeViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F0F7B1A3249E46E8005178A1 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				F0F7B1B0249E4B67005178A1 /* HomeRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		F0F7B1A4249E46EF005178A1 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F0F7B1B2249E4C48005178A1 /* HomePresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		F0F7B1A5249E4749005178A1 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				F0F7B1A7249E475C005178A1 /* bases */,
+				F0F7B1A6249E4751005178A1 /* extensions */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		F0F7B1A6249E4751005178A1 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		F0F7B1A7249E475C005178A1 /* bases */ = {
+			isa = PBXGroup;
+			children = (
+				F0F7B1A8249E4779005178A1 /* BaseViewController.swift */,
+				F0F7B1AE249E49EE005178A1 /* BaseRouter.swift */,
+				F0F7B1B4249E4C91005178A1 /* BasePresenter.swift */,
+				F0F7B1B6249E4F1F005178A1 /* MainRouter.swift */,
+			);
+			path = bases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +331,7 @@
 				F0F7B17D249E41BF005178A1 /* LaunchScreen.storyboard in Resources */,
 				F0F7B17A249E41BF005178A1 /* Preview Assets.xcassets in Resources */,
 				F0F7B177249E41BF005178A1 /* Assets.xcassets in Resources */,
+				F0F7B1AD249E47B8005178A1 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,10 +356,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F7B1B1249E4B67005178A1 /* HomeRouter.swift in Sources */,
+				F0F7B1B5249E4C91005178A1 /* BasePresenter.swift in Sources */,
+				F0F7B1A9249E4779005178A1 /* BaseViewController.swift in Sources */,
 				F0F7B16E249E41BF005178A1 /* AppDelegate.swift in Sources */,
+				F0F7B1AF249E49EE005178A1 /* BaseRouter.swift in Sources */,
 				F0F7B170249E41BF005178A1 /* SceneDelegate.swift in Sources */,
-				F0F7B175249E41BF005178A1 /* ContentView.swift in Sources */,
+				F0F7B1B3249E4C48005178A1 /* HomePresenter.swift in Sources */,
 				F0F7B173249E41BF005178A1 /* MyCalendar.xcdatamodeld in Sources */,
+				F0F7B1B7249E4F1F005178A1 /* MainRouter.swift in Sources */,
+				F0F7B1AC249E47B8005178A1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
