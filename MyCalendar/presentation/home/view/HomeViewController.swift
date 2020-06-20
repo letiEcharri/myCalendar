@@ -14,8 +14,21 @@ protocol HomeViewControllerDelegate {
 
 class HomeViewController: BaseViewController {
     
-    let presenter: HomePresenterDelegate
+//    MARK: Outlets
+    @IBOutlet weak var leftArrowButton: UIButton!
+    @IBOutlet weak var rightArrowButton: UIButton!
+    @IBOutlet weak var titleTextField: UITextField! {
+        didSet {
+            titleTextField.font = .aller(style: .regular, size: 20)
+        }
+    }
     
+//    MARK: Properties
+    let titlePicker = UIPickerView()
+    
+    let presenter: HomePresenterDelegate
+
+//    MARK: Initialization
     init(presenter: HomePresenterDelegate) {
         self.presenter = presenter
         super.init(nibName: "HomeViewController", bundle: nil)
@@ -29,10 +42,78 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
 
         title = "myCalendar"
+        configureTitlePicker()
     }
 
+//   MARK: Functions
+    
+    private func configureTitlePicker() {
+        //Formate Date
+        titlePicker.delegate = self
+        titlePicker.dataSource = self
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let button = UIBarButtonItem(title: "Aceptar", style: .plain, target: self, action: #selector(acceptTitlePicker));
+        toolbar.setItems([button], animated: true)
+        
+        titleTextField.inputAccessoryView = toolbar
+        titleTextField.inputView = titlePicker
+        titleTextField.delegate = self
+        titleTextField.text = "\(presenter.currentMonth.capitalized) \(presenter.currentYear)"
+        
+        let selected = presenter.getSelectedIndex()
+        titlePicker.selectRow(selected.month, inComponent: 0, animated: true)
+        titlePicker.selectRow(selected.year, inComponent: 1, animated: true)
+    }
+    
+    @objc
+    private func acceptTitlePicker() {
+        titleTextField.resignFirstResponder()
+    }
+    
+    @objc
+    private func titleTexFieldAction(_ textField: UITextField) {
+        titleTextField.resignFirstResponder()
+    }
+    
 }
 
+//  MARK: HomeViewControllerDelegate
 extension HomeViewController: HomeViewControllerDelegate {
     
+}
+
+//  MARK: Picker Delegate & DataSource
+extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return component == 0 ? presenter.getMonths().count : presenter.getYears().count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return component == 0 ? presenter.getMonths()[row] : presenter.getYears()[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let month = presenter.getMonths()[pickerView.selectedRow(inComponent: 0)].capitalized
+        let year = presenter.getYears()[pickerView.selectedRow(inComponent: 1)]
+        
+        titleTextField.text = "\(month) \(year)"
+        presenter.saveSelectedDate(month: pickerView.selectedRow(inComponent: 0) + 1, year: year)
+    }
+}
+
+//  MARK: UITextFieldDelegate
+extension HomeViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        textField.resignFirstResponder()
+        return false
+    }
 }

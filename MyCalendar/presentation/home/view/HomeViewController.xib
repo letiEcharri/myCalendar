@@ -7,13 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Aller_LtIt.ttf">
-            <string>Aller-LightItalic</string>
+        <array key="Aller_Rg.ttf">
+            <string>Aller</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MyCalendar" customModuleProvider="target">
             <connections>
+                <outlet property="leftArrowButton" destination="0Zd-Uv-g7k" id="45Y-eq-N4Y"/>
+                <outlet property="rightArrowButton" destination="9nn-W1-wrM" id="OWn-3T-bhC"/>
+                <outlet property="titleTextField" destination="Dxb-kj-ZWy" id="4pT-65-De2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,17 +25,47 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNa-ch-fKY">
-                    <rect key="frame" x="185.5" y="438" width="43.5" height="20"/>
-                    <fontDescription key="fontDescription" name="Aller-LightItalic" family="Aller Light" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0j-1f-4nr">
+                    <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                    <items>
+                        <barButtonItem title="Home" id="wvt-ga-o2O"/>
+                    </items>
+                </toolbar>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Z4b-hX-495">
+                    <rect key="frame" x="128.5" y="44" width="157" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zd-Uv-g7k">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="50"/>
+                            <fontDescription key="fontDescription" name="Aller" family="Aller" pointSize="35"/>
+                            <state key="normal" title="&lt;">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                        </button>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dxb-kj-ZWy">
+                            <rect key="frame" x="50" y="0.0" width="57" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nn-W1-wrM">
+                            <rect key="frame" x="127" y="0.0" width="30" height="50"/>
+                            <fontDescription key="fontDescription" name="Aller" family="Aller" pointSize="35"/>
+                            <state key="normal" title="&gt;">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="3dC-rF-FgK"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="wNa-ch-fKY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OKn-Fr-2li"/>
-                <constraint firstItem="wNa-ch-fKY" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="z3n-4B-JuL"/>
+                <constraint firstAttribute="trailing" secondItem="q0j-1f-4nr" secondAttribute="trailing" id="8nK-Yt-w4k"/>
+                <constraint firstItem="Z4b-hX-495" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="K4l-pe-B4T"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="q0j-1f-4nr" secondAttribute="bottom" id="Odt-Ug-RGP"/>
+                <constraint firstItem="Z4b-hX-495" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SEz-Jc-PP3"/>
+                <constraint firstItem="q0j-1f-4nr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yqP-3R-Le9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="153"/>

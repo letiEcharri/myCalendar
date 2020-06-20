@@ -17,6 +17,8 @@
 		F0700620249E5ABE0062799C /* Aller_BdIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0700619249E5ABE0062799C /* Aller_BdIt.ttf */; };
 		F0700621249E5ABE0062799C /* Aller_LtIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F070061A249E5ABE0062799C /* Aller_LtIt.ttf */; };
 		F0700622249E5ABE0062799C /* Aller_Bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F070061B249E5ABE0062799C /* Aller_Bd.ttf */; };
+		F0700624249E754F0062799C /* DateFormatter+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0700623249E754F0062799C /* DateFormatter+Date.swift */; };
+		F0700626249E84060062799C /* HomePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0700625249E84060062799C /* HomePresenterDelegate.swift */; };
 		F0F7B16E249E41BF005178A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B16D249E41BF005178A1 /* AppDelegate.swift */; };
 		F0F7B170249E41BF005178A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */; };
 		F0F7B173249E41BF005178A1 /* MyCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B171249E41BF005178A1 /* MyCalendar.xcdatamodeld */; };
@@ -63,6 +65,8 @@
 		F0700619249E5ABE0062799C /* Aller_BdIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_BdIt.ttf; sourceTree = "<group>"; };
 		F070061A249E5ABE0062799C /* Aller_LtIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_LtIt.ttf; sourceTree = "<group>"; };
 		F070061B249E5ABE0062799C /* Aller_Bd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_Bd.ttf; sourceTree = "<group>"; };
+		F0700623249E754F0062799C /* DateFormatter+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Date.swift"; sourceTree = "<group>"; };
+		F0700625249E84060062799C /* HomePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterDelegate.swift; sourceTree = "<group>"; };
 		F0F7B16A249E41BF005178A1 /* MyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F7B16D249E41BF005178A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				F0F7B1B2249E4C48005178A1 /* HomePresenter.swift */,
+				F0700625249E84060062799C /* HomePresenterDelegate.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 		F0F7B1A6249E4751005178A1 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F0700623249E754F0062799C /* DateFormatter+Date.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -420,6 +426,8 @@
 				F0F7B170249E41BF005178A1 /* SceneDelegate.swift in Sources */,
 				F0F7B1B3249E4C48005178A1 /* HomePresenter.swift in Sources */,
 				F0F7B173249E41BF005178A1 /* MyCalendar.xcdatamodeld in Sources */,
+				F0700626249E84060062799C /* HomePresenterDelegate.swift in Sources */,
+				F0700624249E754F0062799C /* DateFormatter+Date.swift in Sources */,
 				F0F7B1B7249E4F1F005178A1 /* MainRouter.swift in Sources */,
 				F0F7B1AC249E47B8005178A1 /* HomeViewController.swift in Sources */,
 			);

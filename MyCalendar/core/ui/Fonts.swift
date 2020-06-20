@@ -10,7 +10,7 @@ import UIKit
 
 extension UIFont {
     
-    enum AllerStyle {
+    public enum AllerStyle {
         case regular
         case bold
         case boldItalic
@@ -20,11 +20,11 @@ extension UIFont {
         case lightItalic
     }
     
-    func organico(size: CGFloat) -> UIFont {
+    public static func organico(size: CGFloat) -> UIFont {
         return UIFont(name: "Organico DEMO", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    func aller(style: AllerStyle, size: CGFloat) -> UIFont {
+    public static func aller(style: AllerStyle, size: CGFloat) -> UIFont {
         switch style {
         case .regular:
             return UIFont(name: "Aller", size: size) ?? UIFont.systemFont(ofSize: size)
