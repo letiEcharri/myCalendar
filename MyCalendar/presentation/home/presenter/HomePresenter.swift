@@ -56,12 +56,12 @@ extension HomePresenter: HomePresenterDelegate {
     }
     
     func getSelectedIndex() -> (month: Int, year: Int) {
-        let now = Date()
+        let date = pickerSelectedDate ?? Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM"
-        let month = Int(dateFormatter.string(from: now)) ?? 2
+        let month = Int(dateFormatter.string(from: date)) ?? 2
         dateFormatter.dateFormat = "yyyy"
-        let year = Int(dateFormatter.string(from: now)) ?? 0
+        let year = Int(dateFormatter.string(from: date)) ?? 0
         
         let indexMonth = month - 1
         let indexYear = year - 1900

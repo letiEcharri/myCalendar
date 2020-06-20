@@ -240,8 +240,8 @@
 		F0F7B1A4249E46EF005178A1 /* presenter */ = {
 			isa = PBXGroup;
 			children = (
-				F0F7B1B2249E4C48005178A1 /* HomePresenter.swift */,
 				F0700625249E84060062799C /* HomePresenterDelegate.swift */,
+				F0F7B1B2249E4C48005178A1 /* HomePresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
