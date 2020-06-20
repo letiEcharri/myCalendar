@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        customizeNavigationBar()
+        
         return true
     }
 
@@ -78,6 +80,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    private func customizeNavigationBar() {
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = .white // Items
+        navigationBarAppearace.barTintColor = Colors.appPurple // Background
+        navigationBarAppearace.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont().organico(size: 30),
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ] // Title
     }
 
 }

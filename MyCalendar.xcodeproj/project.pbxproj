@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F070060F249E54FF0062799C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F070060E249E54FF0062799C /* Colors.swift */; };
+		F0700612249E579A0062799C /* Organico-DEMO.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0700611249E579A0062799C /* Organico-DEMO.ttf */; };
+		F0700614249E58190062799C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0700613249E58190062799C /* Fonts.swift */; };
+		F070061C249E5ABE0062799C /* Aller_Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0700615249E5ABD0062799C /* Aller_Rg.ttf */; };
+		F070061D249E5ABE0062799C /* AllerDisplay.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0700616249E5ABE0062799C /* AllerDisplay.ttf */; };
+		F070061E249E5ABE0062799C /* Aller_It.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0700617249E5ABE0062799C /* Aller_It.ttf */; };
+		F070061F249E5ABE0062799C /* Aller_Lt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0700618249E5ABE0062799C /* Aller_Lt.ttf */; };
+		F0700620249E5ABE0062799C /* Aller_BdIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0700619249E5ABE0062799C /* Aller_BdIt.ttf */; };
+		F0700621249E5ABE0062799C /* Aller_LtIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F070061A249E5ABE0062799C /* Aller_LtIt.ttf */; };
+		F0700622249E5ABE0062799C /* Aller_Bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F070061B249E5ABE0062799C /* Aller_Bd.ttf */; };
 		F0F7B16E249E41BF005178A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B16D249E41BF005178A1 /* AppDelegate.swift */; };
 		F0F7B170249E41BF005178A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */; };
 		F0F7B173249E41BF005178A1 /* MyCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B171249E41BF005178A1 /* MyCalendar.xcdatamodeld */; };
@@ -43,6 +53,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F070060E249E54FF0062799C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		F0700611249E579A0062799C /* Organico-DEMO.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Organico-DEMO.ttf"; sourceTree = "<group>"; };
+		F0700613249E58190062799C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		F0700615249E5ABD0062799C /* Aller_Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_Rg.ttf; sourceTree = "<group>"; };
+		F0700616249E5ABE0062799C /* AllerDisplay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AllerDisplay.ttf; sourceTree = "<group>"; };
+		F0700617249E5ABE0062799C /* Aller_It.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_It.ttf; sourceTree = "<group>"; };
+		F0700618249E5ABE0062799C /* Aller_Lt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_Lt.ttf; sourceTree = "<group>"; };
+		F0700619249E5ABE0062799C /* Aller_BdIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_BdIt.ttf; sourceTree = "<group>"; };
+		F070061A249E5ABE0062799C /* Aller_LtIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_LtIt.ttf; sourceTree = "<group>"; };
+		F070061B249E5ABE0062799C /* Aller_Bd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_Bd.ttf; sourceTree = "<group>"; };
 		F0F7B16A249E41BF005178A1 /* MyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F7B16D249E41BF005178A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +112,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F070060D249E54EF0062799C /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				F070060E249E54FF0062799C /* Colors.swift */,
+				F0700613249E58190062799C /* Fonts.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		F0700610249E57740062799C /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F070061B249E5ABE0062799C /* Aller_Bd.ttf */,
+				F0700619249E5ABE0062799C /* Aller_BdIt.ttf */,
+				F0700617249E5ABE0062799C /* Aller_It.ttf */,
+				F0700618249E5ABE0062799C /* Aller_Lt.ttf */,
+				F070061A249E5ABE0062799C /* Aller_LtIt.ttf */,
+				F0700615249E5ABD0062799C /* Aller_Rg.ttf */,
+				F0700616249E5ABE0062799C /* AllerDisplay.ttf */,
+				F0700611249E579A0062799C /* Organico-DEMO.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		F0F7B161249E41BF005178A1 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +244,8 @@
 		F0F7B1A5249E4749005178A1 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				F0700610249E57740062799C /* fonts */,
+				F070060D249E54EF0062799C /* ui */,
 				F0F7B1A7249E475C005178A1 /* bases */,
 				F0F7B1A6249E4751005178A1 /* extensions */,
 			);
@@ -328,9 +374,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F070061D249E5ABE0062799C /* AllerDisplay.ttf in Resources */,
+				F0700622249E5ABE0062799C /* Aller_Bd.ttf in Resources */,
+				F0700621249E5ABE0062799C /* Aller_LtIt.ttf in Resources */,
+				F070061F249E5ABE0062799C /* Aller_Lt.ttf in Resources */,
 				F0F7B17D249E41BF005178A1 /* LaunchScreen.storyboard in Resources */,
 				F0F7B17A249E41BF005178A1 /* Preview Assets.xcassets in Resources */,
+				F0700612249E579A0062799C /* Organico-DEMO.ttf in Resources */,
+				F070061E249E5ABE0062799C /* Aller_It.ttf in Resources */,
 				F0F7B177249E41BF005178A1 /* Assets.xcassets in Resources */,
+				F070061C249E5ABE0062799C /* Aller_Rg.ttf in Resources */,
+				F0700620249E5ABE0062799C /* Aller_BdIt.ttf in Resources */,
 				F0F7B1AD249E47B8005178A1 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,8 +411,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0F7B1B1249E4B67005178A1 /* HomeRouter.swift in Sources */,
+				F070060F249E54FF0062799C /* Colors.swift in Sources */,
 				F0F7B1B5249E4C91005178A1 /* BasePresenter.swift in Sources */,
 				F0F7B1A9249E4779005178A1 /* BaseViewController.swift in Sources */,
+				F0700614249E58190062799C /* Fonts.swift in Sources */,
 				F0F7B16E249E41BF005178A1 /* AppDelegate.swift in Sources */,
 				F0F7B1AF249E49EE005178A1 /* BaseRouter.swift in Sources */,
 				F0F7B170249E41BF005178A1 /* SceneDelegate.swift in Sources */,
