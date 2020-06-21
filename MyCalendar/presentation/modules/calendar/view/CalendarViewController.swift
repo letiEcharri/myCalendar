@@ -60,8 +60,12 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
             return UICollectionViewCell()
         }
         
-        cell.numberLabel.text = "\(indexPath.row + 1)"
-        cell.backgroundColor = .red
+        if indexPath.row < 7 {
+            cell.setDay(name: presenter.getDays()[indexPath.row])
+        } else {
+            cell.set(day: "\(indexPath.row - 6)")
+        }
+//        cell.backgroundColor = .red
         
         return cell
     }

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,14 +11,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CalendarCollectionViewCell" customModule="MyCalendar" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="65" height="38"/>
+            <rect key="frame" x="0.0" y="0.0" width="112" height="65"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="65" height="38"/>
+                <rect key="frame" x="0.0" y="0.0" width="112" height="65"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xA8-cs-652">
-                        <rect key="frame" x="22" y="0.0" width="21" height="18"/>
+                        <rect key="frame" x="45.5" y="0.0" width="21" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="vRb-1K-5bK"/>
                         </constraints>
@@ -25,53 +26,27 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xEz-nk-tBL">
-                        <rect key="frame" x="12.5" y="18" width="40" height="10"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rx8-l5-GaR">
-                                <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="10" id="U33-al-kuI"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Tp-d7-aJT">
-                                <rect key="frame" x="15" y="0.0" width="10" height="10"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="10" id="xci-aw-3jn"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGR-mf-6SV">
-                                <rect key="frame" x="30" y="0.0" width="10" height="10"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="10" id="5ME-nR-guS"/>
-                                </constraints>
-                            </view>
-                        </subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mIj-LD-RbP">
+                        <rect key="frame" x="45" y="59" width="22" height="6"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="10" id="IgC-od-rzy"/>
+                            <constraint firstAttribute="height" constant="6" id="ViP-Wh-fHf"/>
                         </constraints>
                     </stackView>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="mIj-LD-RbP" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="4Ci-tl-XrM"/>
+                <constraint firstAttribute="bottom" secondItem="mIj-LD-RbP" secondAttribute="bottom" id="BOf-hj-VlE"/>
                 <constraint firstItem="xA8-cs-652" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BYy-Nz-RBq"/>
-                <constraint firstItem="xEz-nk-tBL" firstAttribute="top" secondItem="xA8-cs-652" secondAttribute="bottom" id="gir-qD-FRX"/>
-                <constraint firstItem="xEz-nk-tBL" firstAttribute="centerX" secondItem="xA8-cs-652" secondAttribute="centerX" id="mkS-5C-Ldj"/>
                 <constraint firstItem="xA8-cs-652" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xZk-QB-TYR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="65" height="38"/>
+            <size key="customSize" width="112" height="65"/>
             <connections>
-                <outlet property="circleCenter" destination="0Tp-d7-aJT" id="ZRS-Y5-Jhu"/>
-                <outlet property="circleLeft" destination="rx8-l5-GaR" id="1qQ-Dv-1w0"/>
-                <outlet property="circleRight" destination="mGR-mf-6SV" id="v79-24-4du"/>
                 <outlet property="numberLabel" destination="xA8-cs-652" id="Hqr-Zq-tQY"/>
-                <outlet property="stackView" destination="xEz-nk-tBL" id="ofu-xp-wM0"/>
+                <outlet property="stackView" destination="mIj-LD-RbP" id="liQ-BO-hGW"/>
             </connections>
-            <point key="canvasLocation" x="157.24637681159422" y="137.27678571428569"/>
+            <point key="canvasLocation" x="191.30434782608697" y="145.64732142857142"/>
         </collectionViewCell>
     </objects>
 </document>

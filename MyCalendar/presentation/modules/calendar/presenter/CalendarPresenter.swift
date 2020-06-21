@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CalendarPresenterDelegate {
-    
+    func getDays() -> [String]
 }
 
 class CalendarPresenter: BasePresenter {
@@ -27,4 +27,16 @@ class CalendarPresenter: BasePresenter {
 //    MARK: CalendarPresenterDelegate
 extension CalendarPresenter: CalendarPresenterDelegate {
     
+    func getDays() -> [String] {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "es_ES")
+        if var days = formatter.shortWeekdaySymbols {
+            let sunday = days[0]
+            days.remove(at: 0)
+            days.append(sunday)
+            return days
+        }
+        
+        return [String]()
+    }
 }
