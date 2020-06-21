@@ -14,6 +14,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MyCalendar" customModuleProvider="target">
             <connections>
+                <outlet property="calendarView" destination="Y6U-Oz-zPk" id="6BS-ll-zVQ"/>
+                <outlet property="calendarViewHeight" destination="GCI-rs-MWz" id="POU-iO-fzr"/>
                 <outlet property="leftArrowButton" destination="0Zd-Uv-g7k" id="45Y-eq-N4Y"/>
                 <outlet property="rightArrowButton" destination="9nn-W1-wrM" id="OWn-3T-bhC"/>
                 <outlet property="titleTextField" destination="Dxb-kj-ZWy" id="4pT-65-De2"/>
@@ -58,6 +60,13 @@
                         <constraint firstAttribute="height" constant="50" id="3dC-rF-FgK"/>
                     </constraints>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6U-Oz-zPk">
+                    <rect key="frame" x="0.0" y="114" width="414" height="300"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="GCI-rs-MWz"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -65,6 +74,9 @@
                 <constraint firstItem="Z4b-hX-495" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="K4l-pe-B4T"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="q0j-1f-4nr" secondAttribute="bottom" id="Odt-Ug-RGP"/>
                 <constraint firstItem="Z4b-hX-495" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SEz-Jc-PP3"/>
+                <constraint firstItem="Y6U-Oz-zPk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZM8-ng-nNE"/>
+                <constraint firstItem="Y6U-Oz-zPk" firstAttribute="top" secondItem="Z4b-hX-495" secondAttribute="bottom" constant="20" id="dIy-h6-qF8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Y6U-Oz-zPk" secondAttribute="trailing" id="dgZ-f7-MLh"/>
                 <constraint firstItem="q0j-1f-4nr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yqP-3R-Le9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeRouterDelegate {
-    
+    func getCalendarViewController() -> CalendarViewController?
 }
 
 class HomeRouter: BaseRouter {
@@ -30,5 +30,7 @@ extension HomeRouter: RouterFactory {
 
 // MARK: HomeRouterDelegate
 extension HomeRouter: HomeRouterDelegate {
-    
+    func getCalendarViewController() -> CalendarViewController? {
+        return CalendarRouter.create(withMainRouter: mainRouter, parameters: nil) as? CalendarViewController
+    }
 }

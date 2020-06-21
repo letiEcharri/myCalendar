@@ -22,9 +22,12 @@ class HomeViewController: BaseViewController {
             titleTextField.font = .aller(style: .regular, size: 20)
         }
     }
+    @IBOutlet weak var calendarView: UIView!
+    @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
     
 //    MARK: Properties
     let titlePicker = UIPickerView()
+    var calendarViewController: CalendarViewController?
     
     let presenter: HomePresenterDelegate
 
@@ -43,6 +46,7 @@ class HomeViewController: BaseViewController {
 
         title = "myCalendar"
         configureTitlePicker()
+        configureCalendar()
     }
 
 //   MARK: Functions
@@ -76,6 +80,22 @@ class HomeViewController: BaseViewController {
     @objc
     private func titleTexFieldAction(_ textField: UITextField) {
         titleTextField.resignFirstResponder()
+    }
+    
+    private func configureCalendar() {
+        if let calendarViewController = presenter.getCalendarViewController() {
+            addChild(calendarViewController)
+            calendarView.addSubview(calendarViewController.view)
+            calendarViewController.didMove(toParent: self)
+            calendarViewController.view.translatesAutoresizingMaskIntoConstraints = false
+
+            NSLayoutConstraint.activate([
+                calendarViewController.view.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor, constant: 0),
+                calendarViewController.view.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor, constant: 0),
+                calendarViewController.view.topAnchor.constraint(equalTo: calendarView.topAnchor, constant: 0),
+                calendarViewController.view.bottomAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 0)
+            ])
+        }
     }
     
 }

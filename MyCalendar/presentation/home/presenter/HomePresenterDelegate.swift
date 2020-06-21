@@ -18,4 +18,5 @@ protocol HomePresenterDelegate {
     func getYears() -> [String]
     func getSelectedIndex() -> (month: Int, year: Int)
     func saveSelectedDate(month: Int, year: String)
+    func getCalendarViewController() -> CalendarViewController?
 }

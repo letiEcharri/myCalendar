@@ -76,4 +76,8 @@ extension HomePresenter: HomePresenterDelegate {
             pickerSelectedDate = date
         }
     }
+    
+    func getCalendarViewController() -> CalendarViewController? {
+        return router.getCalendarViewController()
+    }
 }
