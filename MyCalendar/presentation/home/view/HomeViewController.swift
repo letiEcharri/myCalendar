@@ -22,10 +22,21 @@ class HomeViewController: BaseViewController {
             titleTextField.font = .aller(style: .regular, size: 20)
         }
     }
-    @IBOutlet weak var calendarView: UIView!
+    @IBOutlet weak var calendarView: UIView! {
+        didSet {
+            calendarView.layer.addBorder(edge: .bottom, color: Colors.appPurple, thickness: 1)
+        }
+    }
     @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
     
-//    MARK: Properties
+    @IBOutlet weak var calendarBottomMark: UIView! {
+        didSet {
+            calendarBottomMark.backgroundColor = Colors.appPurple
+            calendarBottomMark.layer.cornerRadius = calendarBottomMark.frame.height / 2
+            calendarBottomMark.clipsToBounds = true
+        }
+    }
+    //    MARK: Properties
     let titlePicker = UIPickerView()
     var calendarViewController: CalendarViewController?
     
@@ -93,7 +104,7 @@ class HomeViewController: BaseViewController {
                 calendarViewController.view.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor, constant: 0),
                 calendarViewController.view.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor, constant: 0),
                 calendarViewController.view.topAnchor.constraint(equalTo: calendarView.topAnchor, constant: 0),
-                calendarViewController.view.bottomAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 0)
+                calendarViewController.view.bottomAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: -11)
             ])
         }
     }

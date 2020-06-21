@@ -11,6 +11,7 @@
 		F0494BD3249FA770007FAD83 /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0494BD1249FA770007FAD83 /* CalendarCollectionViewCell.xib */; };
 		F0494BD5249FAFDC007FAD83 /* CalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0494BD4249FAFDC007FAD83 /* CalendarRouter.swift */; };
 		F04D143A249FEC270089CDDE /* UIView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1439249FEC270089CDDE /* UIView+Style.swift */; };
+		F04D143C249FECF30089CDDE /* CALayer+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D143B249FECF30089CDDE /* CALayer+Borders.swift */; };
 		F070060F249E54FF0062799C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F070060E249E54FF0062799C /* Colors.swift */; };
 		F0700612249E579A0062799C /* Organico-DEMO.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0700611249E579A0062799C /* Organico-DEMO.ttf */; };
 		F0700614249E58190062799C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0700613249E58190062799C /* Fonts.swift */; };
@@ -66,6 +67,7 @@
 		F0494BD1249FA770007FAD83 /* CalendarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCollectionViewCell.xib; sourceTree = "<group>"; };
 		F0494BD4249FAFDC007FAD83 /* CalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRouter.swift; sourceTree = "<group>"; };
 		F04D1439249FEC270089CDDE /* UIView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Style.swift"; sourceTree = "<group>"; };
+		F04D143B249FECF30089CDDE /* CALayer+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Borders.swift"; sourceTree = "<group>"; };
 		F070060E249E54FF0062799C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F0700611249E579A0062799C /* Organico-DEMO.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Organico-DEMO.ttf"; sourceTree = "<group>"; };
 		F0700613249E58190062799C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			children = (
 				F0700623249E754F0062799C /* DateFormatter+Date.swift */,
 				F04D1439249FEC270089CDDE /* UIView+Style.swift */,
+				F04D143B249FECF30089CDDE /* CALayer+Borders.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				F0F7B170249E41BF005178A1 /* SceneDelegate.swift in Sources */,
 				F0F7B1B3249E4C48005178A1 /* HomePresenter.swift in Sources */,
 				F0494BD5249FAFDC007FAD83 /* CalendarRouter.swift in Sources */,
+				F04D143C249FECF30089CDDE /* CALayer+Borders.swift in Sources */,
 				F0F7B173249E41BF005178A1 /* MyCalendar.xcdatamodeld in Sources */,
 				F0700626249E84060062799C /* HomePresenterDelegate.swift in Sources */,
 				F0700624249E754F0062799C /* DateFormatter+Date.swift in Sources */,
