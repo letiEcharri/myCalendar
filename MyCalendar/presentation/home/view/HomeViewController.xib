@@ -21,6 +21,7 @@
                 <outlet property="leftArrowButton" destination="0Zd-Uv-g7k" id="45Y-eq-N4Y"/>
                 <outlet property="rightArrowButton" destination="9nn-W1-wrM" id="OWn-3T-bhC"/>
                 <outlet property="titleTextField" destination="Dxb-kj-ZWy" id="4pT-65-De2"/>
+                <outlet property="topView" destination="72x-Ly-Cj4" id="YGz-xv-WXo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,38 +36,49 @@
                         <barButtonItem title="Home" id="wvt-ga-o2O"/>
                     </items>
                 </toolbar>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Z4b-hX-495">
-                    <rect key="frame" x="128.5" y="44" width="157" height="50"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72x-Ly-Cj4">
+                    <rect key="frame" x="0.0" y="44" width="414" height="70"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zd-Uv-g7k">
-                            <rect key="frame" x="0.0" y="0.0" width="30" height="50"/>
-                            <fontDescription key="fontDescription" name="Aller" family="Aller" pointSize="35"/>
-                            <state key="normal" title="&lt;">
-                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </state>
-                        </button>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dxb-kj-ZWy">
-                            <rect key="frame" x="50" y="0.0" width="57" height="50"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nn-W1-wrM">
-                            <rect key="frame" x="127" y="0.0" width="30" height="50"/>
-                            <fontDescription key="fontDescription" name="Aller" family="Aller" pointSize="35"/>
-                            <state key="normal" title="&gt;">
-                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </state>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Z4b-hX-495">
+                            <rect key="frame" x="142.5" y="10" width="129" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zd-Uv-g7k">
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="50"/>
+                                    <fontDescription key="fontDescription" name="Aller" family="Aller" pointSize="35"/>
+                                    <state key="normal" title="&lt;">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                </button>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dxb-kj-ZWy">
+                                    <rect key="frame" x="50" y="0.0" width="29" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nn-W1-wrM">
+                                    <rect key="frame" x="99" y="0.0" width="30" height="50"/>
+                                    <fontDescription key="fontDescription" name="Aller" family="Aller" pointSize="35"/>
+                                    <state key="normal" title="&gt;">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="3dC-rF-FgK"/>
+                            </constraints>
+                        </stackView>
                     </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="3dC-rF-FgK"/>
+                        <constraint firstAttribute="height" constant="70" id="0fG-Ab-08I"/>
+                        <constraint firstItem="Z4b-hX-495" firstAttribute="top" secondItem="72x-Ly-Cj4" secondAttribute="top" constant="10" id="Pd5-Pw-05Q"/>
+                        <constraint firstItem="Z4b-hX-495" firstAttribute="centerX" secondItem="72x-Ly-Cj4" secondAttribute="centerX" id="sXT-A1-Rck"/>
                     </constraints>
-                </stackView>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6U-Oz-zPk">
-                    <rect key="frame" x="0.0" y="114" width="414" height="250"/>
+                    <rect key="frame" x="0.0" y="114" width="414" height="300"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgp-KP-iCe">
-                            <rect key="frame" x="182" y="240" width="50" height="5"/>
+                            <rect key="frame" x="182" y="290" width="50" height="5"/>
                             <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="5" id="58T-4d-07c"/>
@@ -76,7 +88,7 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="250" id="GCI-rs-MWz"/>
+                        <constraint firstAttribute="height" constant="300" id="GCI-rs-MWz"/>
                         <constraint firstItem="zgp-KP-iCe" firstAttribute="centerX" secondItem="Y6U-Oz-zPk" secondAttribute="centerX" id="fG9-Mr-yKp"/>
                         <constraint firstAttribute="bottom" secondItem="zgp-KP-iCe" secondAttribute="bottom" constant="5" id="kA8-ll-rIT"/>
                     </constraints>
@@ -85,16 +97,17 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="q0j-1f-4nr" secondAttribute="trailing" id="8nK-Yt-w4k"/>
-                <constraint firstItem="Z4b-hX-495" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="K4l-pe-B4T"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="q0j-1f-4nr" secondAttribute="bottom" id="Odt-Ug-RGP"/>
-                <constraint firstItem="Z4b-hX-495" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SEz-Jc-PP3"/>
+                <constraint firstItem="Y6U-Oz-zPk" firstAttribute="top" secondItem="72x-Ly-Cj4" secondAttribute="bottom" id="TBz-46-aqC"/>
+                <constraint firstItem="72x-Ly-Cj4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZAw-5m-2F5"/>
                 <constraint firstItem="Y6U-Oz-zPk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZM8-ng-nNE"/>
-                <constraint firstItem="Y6U-Oz-zPk" firstAttribute="top" secondItem="Z4b-hX-495" secondAttribute="bottom" constant="20" id="dIy-h6-qF8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Y6U-Oz-zPk" secondAttribute="trailing" id="dgZ-f7-MLh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="72x-Ly-Cj4" secondAttribute="trailing" id="f6A-lR-JW4"/>
                 <constraint firstItem="q0j-1f-4nr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yqP-3R-Le9"/>
+                <constraint firstItem="72x-Ly-Cj4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="z2m-1L-zqy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
 </document>

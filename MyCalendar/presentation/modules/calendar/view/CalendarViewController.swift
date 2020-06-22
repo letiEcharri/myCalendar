@@ -20,11 +20,12 @@ class CalendarViewController: BaseViewController {
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.register(CalendarCollectionViewCell.nib, forCellWithReuseIdentifier: CalendarCollectionViewCell.identifier)
+            collectionView.backgroundColor = .clear
         }
     }
     
 //    MARK: Properties
-    let presenter: CalendarPresenterDelegate
+    var presenter: CalendarPresenterDelegate
    
 //    MARK: Initialization
     init(presenter: CalendarPresenterDelegate) {
@@ -39,7 +40,7 @@ class CalendarViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = .clear
     }
 
 //   MARK: Functions
@@ -52,20 +53,34 @@ extension CalendarViewController: CalendarViewControllerDelegate {
 
 extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return presenter.numberOfDays()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCollectionViewCell.identifier, for: indexPath) as? CalendarCollectionViewCell else {
             return UICollectionViewCell()
         }
+
+        let firstDay = presenter.selectedMonth.firstDayOfTheMonth.weekday
         
         if indexPath.row < 7 {
             cell.setDay(name: presenter.getDays()[indexPath.row])
         } else {
-            cell.set(day: "\(indexPath.row - 6)")
+            if firstDay == 1  {
+                if indexPath.row < 13 {
+                    cell.set(day: "")
+                } else {
+                    cell.set(day: "\(indexPath.row - 12)")
+                }
+                
+            } else {
+                if indexPath.row < (5 + firstDay) {
+                    cell.set(day: "")
+                } else {
+                    cell.set(day: "\(indexPath.row - 6 - (firstDay - 2))")
+                }
+            }
         }
-//        cell.backgroundColor = .red
         
         return cell
     }

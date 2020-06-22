@@ -35,6 +35,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     private func configureView() {
         
         numberLabel.font = .aller(style: .regular, size: 12)
+        self.backgroundColor = .clear
     }
     
     private func addCircle(color: UIColor) {

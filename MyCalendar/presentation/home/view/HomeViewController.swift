@@ -15,6 +15,11 @@ protocol HomeViewControllerDelegate {
 class HomeViewController: BaseViewController {
     
 //    MARK: Outlets
+    @IBOutlet weak var topView: UIView! {
+        didSet {
+            topView.backgroundColor = Colors.lightPurple
+        }
+    }
     @IBOutlet weak var leftArrowButton: UIButton!
     @IBOutlet weak var rightArrowButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField! {
@@ -25,6 +30,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var calendarView: UIView! {
         didSet {
             calendarView.layer.addBorder(edge: .bottom, color: Colors.appPurple, thickness: 1)
+            calendarView.backgroundColor = Colors.lightPurple
         }
     }
     @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
@@ -34,6 +40,7 @@ class HomeViewController: BaseViewController {
             calendarBottomMark.backgroundColor = Colors.appPurple
             calendarBottomMark.layer.cornerRadius = calendarBottomMark.frame.height / 2
             calendarBottomMark.clipsToBounds = true
+            calendarBottomMark.shadow()
         }
     }
     //    MARK: Properties
