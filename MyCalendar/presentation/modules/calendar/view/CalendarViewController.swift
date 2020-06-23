@@ -39,7 +39,7 @@ class CalendarViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view.backgroundColor = .clear
     }
 
@@ -73,16 +73,18 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         } else {
             if firstDay == 1  {
                 if indexPath.row < 13 {
-                    cell.set(day: "")
+                    cell.set(day: "", selected: false)
                 } else {
-                    cell.set(day: "\(indexPath.row - 12)")
+                    let day = "\(indexPath.row - 12)"
+                    cell.set(day: day, selected: day == presenter.selectedDate.get(component: .day))
                 }
                 
             } else {
                 if indexPath.row < (5 + firstDay) {
-                    cell.set(day: "")
+                    cell.set(day: "", selected: false)
                 } else {
-                    cell.set(day: "\(indexPath.row - 6 - (firstDay - 2))")
+                    let day = "\(indexPath.row - 6 - (firstDay - 2))"
+                    cell.set(day: day, selected: day == presenter.selectedDate.get(component: .day))
                 }
             }
         }
@@ -95,6 +97,6 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
 
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width/9.5, height: 30)
+        return CGSize(width: collectionView.frame.size.width/9.5, height: 40)
     }
 }

@@ -31,6 +31,25 @@ extension Date {
     var firstDayOfTheMonth: Date {
         return Calendar.current.date(from: Calendar.current.dateComponents([.year,.month], from: self))!
     }
+    
+    func get(component: Calendar.Component) -> String {
+        if let comp = Calendar.current.date(from: Calendar.current.dateComponents([component], from: self)) {
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "es_ES")
+            
+            switch component {
+            case .year:
+                formatter.dateFormat = "yyyy"
+            case .month:
+                formatter.dateFormat = "MMMM"
+            default:
+                formatter.dateFormat = "dd"
+            }
+            
+            return formatter.string(from: comp)
+        }
+        return ""
+    }
 }
 extension String {
     static var dateFormatter: DateFormatter = {

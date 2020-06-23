@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xA8-cs-652">
-                        <rect key="frame" x="45.5" y="0.0" width="21" height="18"/>
+                        <rect key="frame" x="45.5" y="10" width="21" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="vRb-1K-5bK"/>
                         </constraints>
@@ -26,6 +26,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0s-oT-uPF" customClass="CalendarSelectedButton" customModule="MyCalendar" customModuleProvider="target">
+                        <rect key="frame" x="43.5" y="6.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="ALG-O1-UC3"/>
+                            <constraint firstAttribute="height" constant="25" id="qTj-bt-OSV"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                    </button>
                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mIj-LD-RbP">
                         <rect key="frame" x="45" y="59" width="22" height="6"/>
                         <constraints>
@@ -37,12 +45,15 @@
             <constraints>
                 <constraint firstItem="mIj-LD-RbP" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="4Ci-tl-XrM"/>
                 <constraint firstAttribute="bottom" secondItem="mIj-LD-RbP" secondAttribute="bottom" id="BOf-hj-VlE"/>
-                <constraint firstItem="xA8-cs-652" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BYy-Nz-RBq"/>
+                <constraint firstItem="xA8-cs-652" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="BYy-Nz-RBq"/>
+                <constraint firstItem="M0s-oT-uPF" firstAttribute="centerY" secondItem="xA8-cs-652" secondAttribute="centerY" id="dEI-IE-6bn"/>
+                <constraint firstItem="M0s-oT-uPF" firstAttribute="centerX" secondItem="xA8-cs-652" secondAttribute="centerX" id="oso-au-wHd"/>
                 <constraint firstItem="xA8-cs-652" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xZk-QB-TYR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="112" height="65"/>
             <connections>
+                <outlet property="numberButton" destination="M0s-oT-uPF" id="Kjq-CK-1N1"/>
                 <outlet property="numberLabel" destination="xA8-cs-652" id="Hqr-Zq-tQY"/>
                 <outlet property="stackView" destination="mIj-LD-RbP" id="liQ-BO-hGW"/>
             </connections>

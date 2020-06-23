@@ -17,12 +17,12 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "CalendarCollectionViewCell", bundle: nil)
     }
     
+//    var numberButton = UIButton()
+    
 // MARK: Outlets
     @IBOutlet weak var numberLabel: UILabel!
-//    @IBOutlet weak var circleLeft: UIView!
-//    @IBOutlet weak var circleCenter: UIView!
-//    @IBOutlet weak var circleRight: UIView!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var numberButton: CalendarSelectedButton!
     
 // MARK: Initialization
     override func awakeFromNib() {
@@ -52,14 +52,20 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         stackView.layoutIfNeeded()
     }
     
-    func set(day: String) {
+    @objc
+    private func buttonAction(_ sender: UIButton) {
+        
+    }
+    
+    func set(day: String, selected: Bool) {
         numberLabel.text = day
         numberLabel.font = .aller(style: .regular, size: 15)
+        numberButton.setTitle(selected ? day : "", for: .normal)
+        numberButton.selected(selected)
     }
     
     func setDay(name: String) {
         numberLabel.text = name.capitalized
         numberLabel.font = .aller(style: .bold, size: 15)
     }
-
 }
