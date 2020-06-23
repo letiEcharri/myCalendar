@@ -78,7 +78,7 @@ class HomeViewController: BaseViewController {
 //  MARK: Outlet Actions
     
     @IBAction func moveMonthAction(_ sender: UIButton) {
-        let date = Calendar.current.date(byAdding: .month, value: sender.tag == 0 ? -1 : 1, to: Date()) ?? Date()
+        let date = Calendar.current.date(byAdding: .month, value: sender.tag == 0 ? -1 : 1, to: presenter.pickerSelectedDate ?? Date()) ?? Date()
         presenter.pickerSelectedDate = date
         calendarViewController?.set(date: date)
         titleTextField.text = presenter.format(date: date).capitalized
