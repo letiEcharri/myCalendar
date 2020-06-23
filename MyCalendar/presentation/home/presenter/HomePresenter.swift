@@ -80,4 +80,11 @@ extension HomePresenter: HomePresenterDelegate {
     func getCalendarViewController() -> CalendarViewController? {
         return router.getCalendarViewController()
     }
+    
+    func format(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM yyyy"
+        dateFormatter.locale = Locale(identifier: "es_ES")
+        return dateFormatter.string(from: date)
+    }
 }

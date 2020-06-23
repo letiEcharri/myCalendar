@@ -7,11 +7,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Aller_Rg.ttf">
-            <string>Aller</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MyCalendar" customModuleProvider="target">
             <connections>
@@ -39,39 +34,50 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72x-Ly-Cj4">
                     <rect key="frame" x="0.0" y="44" width="414" height="70"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Z4b-hX-495">
-                            <rect key="frame" x="142.5" y="10" width="129" height="50"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Z4b-hX-495">
+                            <rect key="frame" x="20" y="10" width="374" height="40"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zd-Uv-g7k">
-                                    <rect key="frame" x="0.0" y="0.0" width="30" height="50"/>
-                                    <fontDescription key="fontDescription" name="Aller" family="Aller" pointSize="35"/>
-                                    <state key="normal" title="&lt;">
+                                <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zd-Uv-g7k">
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="ffN-Vx-mG6"/>
+                                    </constraints>
+                                    <state key="normal" image="leftArrow">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
+                                    <connections>
+                                        <action selector="moveMonthAction:" destination="-1" eventType="touchUpInside" id="e1f-hV-a1p"/>
+                                    </connections>
                                 </button>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dxb-kj-ZWy">
-                                    <rect key="frame" x="50" y="0.0" width="29" height="50"/>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="January" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dxb-kj-ZWy">
+                                    <rect key="frame" x="60" y="11" width="254" height="18.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nn-W1-wrM">
-                                    <rect key="frame" x="99" y="0.0" width="30" height="50"/>
-                                    <fontDescription key="fontDescription" name="Aller" family="Aller" pointSize="35"/>
-                                    <state key="normal" title="&gt;">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nn-W1-wrM">
+                                    <rect key="frame" x="334" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="dkP-Os-4fS"/>
+                                    </constraints>
+                                    <state key="normal" image="rightArrow">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
+                                    <connections>
+                                        <action selector="moveMonthAction:" destination="-1" eventType="touchUpInside" id="tIj-u2-OzQ"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="3dC-rF-FgK"/>
+                                <constraint firstAttribute="height" constant="40" id="3dC-rF-FgK"/>
                             </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="0fG-Ab-08I"/>
+                        <constraint firstItem="Z4b-hX-495" firstAttribute="leading" secondItem="72x-Ly-Cj4" secondAttribute="leading" constant="20" id="Lmy-0T-yia"/>
                         <constraint firstItem="Z4b-hX-495" firstAttribute="top" secondItem="72x-Ly-Cj4" secondAttribute="top" constant="10" id="Pd5-Pw-05Q"/>
-                        <constraint firstItem="Z4b-hX-495" firstAttribute="centerX" secondItem="72x-Ly-Cj4" secondAttribute="centerX" id="sXT-A1-Rck"/>
+                        <constraint firstAttribute="trailing" secondItem="Z4b-hX-495" secondAttribute="trailing" constant="20" id="dtd-3z-Zu2"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6U-Oz-zPk">
@@ -110,4 +116,8 @@
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
+    <resources>
+        <image name="leftArrow" width="697" height="697"/>
+        <image name="rightArrow" width="359" height="359"/>
+    </resources>
 </document>

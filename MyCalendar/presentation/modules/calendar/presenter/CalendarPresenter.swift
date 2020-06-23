@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CalendarPresenterDelegate {
-    var selectedMonth: Date { get set }
+    var selectedDate: Date { get set }
     
     func getDays() -> [String]
     func numberOfDays() -> Int
@@ -21,7 +21,7 @@ class CalendarPresenter: BasePresenter {
     var ui: CalendarViewController?
     let router: CalendarRouterDelegate
     
-    var selectedMonth: Date = Date()
+    var selectedDate: Date = Date()
     
 //    MARK: Initialization
     init(router: CalendarRouterDelegate) {
@@ -49,13 +49,13 @@ extension CalendarPresenter: CalendarPresenterDelegate {
         
         let calendar = Calendar.current
         
-        let dateComponents = DateComponents(year: calendar.component(.year, from: selectedMonth), month: calendar.component(.month, from: selectedMonth))
+        let dateComponents = DateComponents(year: calendar.component(.year, from: selectedDate), month: calendar.component(.month, from: selectedDate))
         if let date = calendar.date(from: dateComponents),
             let range = calendar.range(of: .day, in: .month, for: date) {
             let days = range.count
-            let total = days + selectedMonth.firstDayOfTheMonth.weekday
+            let total = days + selectedDate.firstDayOfTheMonth.weekday
             
-            return selectedMonth.firstDayOfTheMonth.weekday == 1 ? total + 12 : total + 5
+            return selectedDate.firstDayOfTheMonth.weekday == 1 ? total + 12 : total + 5
         }
         
         return 0

@@ -44,6 +44,11 @@ class CalendarViewController: BaseViewController {
     }
 
 //   MARK: Functions
+    
+    func set(date: Date) {
+        presenter.selectedDate = date
+        collectionView.reloadData()
+    }
 }
 
 //   MARK: Calendar Delegate
@@ -61,7 +66,7 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
             return UICollectionViewCell()
         }
 
-        let firstDay = presenter.selectedMonth.firstDayOfTheMonth.weekday
+        let firstDay = presenter.selectedDate.firstDayOfTheMonth.weekday
         
         if indexPath.row < 7 {
             cell.setDay(name: presenter.getDays()[indexPath.row])
@@ -85,6 +90,8 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         return cell
     }
 }
+
+//  MARK: - UICollectionViewDelegateFlowLayout
 
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

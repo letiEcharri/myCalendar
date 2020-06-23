@@ -20,8 +20,16 @@ class HomeViewController: BaseViewController {
             topView.backgroundColor = Colors.lightPurple
         }
     }
-    @IBOutlet weak var leftArrowButton: UIButton!
-    @IBOutlet weak var rightArrowButton: UIButton!
+    @IBOutlet weak var leftArrowButton: UIButton! {
+        didSet {
+            leftArrowButton.tintColor = Colors.appPurple
+        }
+    }
+    @IBOutlet weak var rightArrowButton: UIButton!{
+        didSet {
+            rightArrowButton.tintColor = Colors.appPurple
+        }
+    }
     @IBOutlet weak var titleTextField: UITextField! {
         didSet {
             titleTextField.font = .aller(style: .regular, size: 20)
@@ -47,7 +55,7 @@ class HomeViewController: BaseViewController {
     let titlePicker = UIPickerView()
     var calendarViewController: CalendarViewController?
     
-    let presenter: HomePresenterDelegate
+    var presenter: HomePresenterDelegate
 
 //    MARK: Initialization
     init(presenter: HomePresenterDelegate) {
@@ -66,7 +74,16 @@ class HomeViewController: BaseViewController {
         configureTitlePicker()
         configureCalendar()
     }
-
+    
+//  MARK: Outlet Actions
+    
+    @IBAction func moveMonthAction(_ sender: UIButton) {
+        let date = Calendar.current.date(byAdding: .month, value: sender.tag == 0 ? -1 : 1, to: Date()) ?? Date()
+        presenter.pickerSelectedDate = date
+        calendarViewController?.set(date: date)
+        titleTextField.text = presenter.format(date: date).capitalized
+    }
+    
 //   MARK: Functions
     
     private func configureTitlePicker() {
@@ -101,17 +118,18 @@ class HomeViewController: BaseViewController {
     }
     
     private func configureCalendar() {
-        if let calendarViewController = presenter.getCalendarViewController() {
-            addChild(calendarViewController)
-            calendarView.addSubview(calendarViewController.view)
-            calendarViewController.didMove(toParent: self)
-            calendarViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        if let controller = presenter.getCalendarViewController() {
+            calendarViewController = controller
+            addChild(calendarViewController!)
+            calendarView.addSubview(calendarViewController!.view)
+            calendarViewController!.didMove(toParent: self)
+            calendarViewController!.view.translatesAutoresizingMaskIntoConstraints = false
 
             NSLayoutConstraint.activate([
-                calendarViewController.view.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor, constant: 0),
-                calendarViewController.view.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor, constant: 0),
-                calendarViewController.view.topAnchor.constraint(equalTo: calendarView.topAnchor, constant: 0),
-                calendarViewController.view.bottomAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: -11)
+                calendarViewController!.view.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor, constant: 0),
+                calendarViewController!.view.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor, constant: 0),
+                calendarViewController!.view.topAnchor.constraint(equalTo: calendarView.topAnchor, constant: 0),
+                calendarViewController!.view.bottomAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: -11)
             ])
         }
     }
