@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CalendarCollectionViewCellDelegate {
+    func click(day: Date)
+}
+
 class CalendarCollectionViewCell: UICollectionViewCell {
 
 // MARK: Properties
@@ -17,7 +21,9 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "CalendarCollectionViewCell", bundle: nil)
     }
     
-//    var numberButton = UIButton()
+    var date: Date?
+    
+    var delegate: CalendarCollectionViewCellDelegate?
     
 // MARK: Outlets
     @IBOutlet weak var numberLabel: UILabel!
@@ -33,9 +39,9 @@ class CalendarCollectionViewCell: UICollectionViewCell {
 // MARK: Functions
     
     private func configureView() {
-        
-        numberLabel.font = .aller(style: .regular, size: 12)
         self.backgroundColor = .clear
+        numberLabel.font = .aller(style: .regular, size: 12)
+        numberButton.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
     }
     
     private func addCircle(color: UIColor) {
@@ -52,20 +58,25 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         stackView.layoutIfNeeded()
     }
     
-    @objc
-    private func buttonAction(_ sender: UIButton) {
+    @objc private func buttonAction(_ sender: UIButton) {
         
+        delegate?.click(day: date ?? Date())
     }
     
-    func set(day: String, selected: Bool) {
+    func set(day: String, selected: Bool, date: Date?) {
+        self.date = date
         numberLabel.text = day
         numberLabel.font = .aller(style: .regular, size: 15)
         numberButton.setTitle(selected ? day : "", for: .normal)
         numberButton.selected(selected)
+        numberButton.tag = Int(day) ?? 0
     }
     
     func setDay(name: String) {
         numberLabel.text = name.capitalized
         numberLabel.font = .aller(style: .bold, size: 15)
+        numberButton.setTitle("", for: .normal)
+        numberButton.selected(false)
+        self.date = nil
     }
 }

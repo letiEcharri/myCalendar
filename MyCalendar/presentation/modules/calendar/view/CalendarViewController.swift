@@ -65,26 +65,32 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCollectionViewCell.identifier, for: indexPath) as? CalendarCollectionViewCell else {
             return UICollectionViewCell()
         }
+        
+        cell.delegate = self
 
-        let firstDay = presenter.selectedDate.firstDayOfTheMonth.weekday
+        let firstDay = presenter.selectedDate.firstDayOfTheMonth
         
         if indexPath.row < 7 {
             cell.setDay(name: presenter.getDays()[indexPath.row])
         } else {
-            if firstDay == 1  {
+            if firstDay.weekday == 1  {
                 if indexPath.row < 13 {
-                    cell.set(day: "", selected: false)
+                    cell.set(day: "", selected: false, date: nil)
                 } else {
-                    let day = "\(indexPath.row - 12)"
-                    cell.set(day: day, selected: day == presenter.selectedDate.get(component: .day))
+                    let day = indexPath.row - 12
+                    let date = day > 1 ? Calendar.current.date(byAdding: .day, value: day - 1, to: firstDay) : firstDay
+                    let selected = date?.get(component: .day) == presenter.selectedDate.get(component: .day) && date?.get(component: .month) == presenter.selectedDate.get(component: .month) && date?.get(component: .year) == presenter.selectedDate.get(component: .year)
+                    cell.set(day: "\(day)", selected: selected, date: date)
                 }
                 
             } else {
-                if indexPath.row < (5 + firstDay) {
-                    cell.set(day: "", selected: false)
+                if indexPath.row < (5 + firstDay.weekday) {
+                    cell.set(day: "", selected: false, date: nil)
                 } else {
-                    let day = "\(indexPath.row - 6 - (firstDay - 2))"
-                    cell.set(day: day, selected: day == presenter.selectedDate.get(component: .day))
+                    let day = indexPath.row - 6 - (firstDay.weekday - 2)
+                    let date = day > 1 ? Calendar.current.date(byAdding: .day, value: day - 1, to: firstDay) : firstDay
+                    let selected = date?.get(component: .day) == presenter.selectedDate.get(component: .day) && date?.get(component: .month) == presenter.selectedDate.get(component: .month) && date?.get(component: .year) == presenter.selectedDate.get(component: .year)
+                    cell.set(day: "\(day)", selected: selected, date: date)
                 }
             }
         }
@@ -98,5 +104,14 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width/9.5, height: 40)
+    }
+}
+
+//  MARK: - CalendarCollectionViewCellDelegate
+
+extension CalendarViewController: CalendarCollectionViewCellDelegate {
+    func click(day: Date) {
+        presenter.selectedDate = day
+        collectionView.reloadData()
     }
 }

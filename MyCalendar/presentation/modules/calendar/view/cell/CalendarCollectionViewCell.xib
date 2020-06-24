@@ -27,10 +27,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0s-oT-uPF" customClass="CalendarSelectedButton" customModule="MyCalendar" customModuleProvider="target">
-                        <rect key="frame" x="43.5" y="6.5" width="25" height="25"/>
+                        <rect key="frame" x="42" y="5" width="28" height="28"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="25" id="ALG-O1-UC3"/>
-                            <constraint firstAttribute="height" constant="25" id="qTj-bt-OSV"/>
+                            <constraint firstAttribute="width" constant="28" id="ALG-O1-UC3"/>
+                            <constraint firstAttribute="height" constant="28" id="qTj-bt-OSV"/>
                         </constraints>
                         <state key="normal" title="Button"/>
                     </button>
