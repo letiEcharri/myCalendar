@@ -12,7 +12,7 @@
             <connections>
                 <outlet property="calendarBottomMark" destination="zgp-KP-iCe" id="n1g-Kn-EMh"/>
                 <outlet property="calendarView" destination="Y6U-Oz-zPk" id="6BS-ll-zVQ"/>
-                <outlet property="calendarViewHeight" destination="GCI-rs-MWz" id="POU-iO-fzr"/>
+                <outlet property="calendarViewHeight" destination="GCI-rs-MWz" id="zwt-oB-lsM"/>
                 <outlet property="leftArrowButton" destination="0Zd-Uv-g7k" id="45Y-eq-N4Y"/>
                 <outlet property="rightArrowButton" destination="9nn-W1-wrM" id="OWn-3T-bhC"/>
                 <outlet property="titleTextField" destination="Dxb-kj-ZWy" id="4pT-65-De2"/>
@@ -99,10 +99,20 @@
                         <constraint firstAttribute="bottom" secondItem="zgp-KP-iCe" secondAttribute="bottom" constant="5" id="kA8-ll-rIT"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0m-dV-eHi">
+                    <rect key="frame" x="0.0" y="414" width="414" height="1"/>
+                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="juv-gl-Cps"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="q0j-1f-4nr" secondAttribute="trailing" id="8nK-Yt-w4k"/>
+                <constraint firstItem="n0m-dV-eHi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9HH-lw-RLj"/>
+                <constraint firstItem="n0m-dV-eHi" firstAttribute="top" secondItem="Y6U-Oz-zPk" secondAttribute="bottom" id="CyO-lF-k87"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n0m-dV-eHi" secondAttribute="trailing" id="LTz-yv-2Ky"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="q0j-1f-4nr" secondAttribute="bottom" id="Odt-Ug-RGP"/>
                 <constraint firstItem="Y6U-Oz-zPk" firstAttribute="top" secondItem="72x-Ly-Cj4" secondAttribute="bottom" id="TBz-46-aqC"/>
                 <constraint firstItem="72x-Ly-Cj4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZAw-5m-2F5"/>

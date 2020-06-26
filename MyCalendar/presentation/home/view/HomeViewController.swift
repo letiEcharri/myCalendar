@@ -37,11 +37,9 @@ class HomeViewController: BaseViewController {
     }
     @IBOutlet weak var calendarView: UIView! {
         didSet {
-            calendarView.layer.addBorder(edge: .bottom, color: Colors.appPurple, thickness: 1)
             calendarView.backgroundColor = Colors.lightPurple
         }
     }
-    @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var calendarBottomMark: UIView! {
         didSet {
@@ -51,9 +49,15 @@ class HomeViewController: BaseViewController {
             calendarBottomMark.shadow()
         }
     }
+    @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
+    
     //    MARK: Properties
     let titlePicker = UIPickerView()
     var calendarViewController: CalendarViewController?
+    
+    let maxCalendarHeigh: CGFloat = 300
+    let minCalendarHeigh: CGFloat = 15
+    var closedCalendar = false
     
     var presenter: HomePresenterDelegate
 
@@ -132,7 +136,38 @@ class HomeViewController: BaseViewController {
                 calendarViewController!.view.bottomAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: -11)
             ])
         }
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        panGesture.delaysTouchesBegan = false
+        panGesture.delaysTouchesEnded = false
+        calendarView.addGestureRecognizer(panGesture)
     }
+    
+    @objc
+    func handlePan(_ gesture: UIPanGestureRecognizer) {
+        
+        let translation = gesture.translation(in: self.view).y
+        
+        switch gesture.state {
+        case .began:
+            closedCalendar = calendarViewHeight.constant == minCalendarHeigh
+            
+        case .changed:
+            let value = closedCalendar ? translation : maxCalendarHeigh + translation
+            calendarViewHeight.constant = min(max(value, minCalendarHeigh), maxCalendarHeigh)
+            
+        case .ended:
+            calendarViewHeight.constant = calendarViewHeight.constant > (maxCalendarHeigh / 2) ? maxCalendarHeigh : minCalendarHeigh
+            
+            closedCalendar = calendarViewHeight.constant == minCalendarHeigh
+            
+        default:
+            break
+        }
+        
+//        print("\(translation) - \(calendarViewHeight.constant)")
+    }
+
     
 }
 
