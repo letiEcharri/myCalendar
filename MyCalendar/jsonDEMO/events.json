@@ -1,0 +1,31 @@
+{
+    "events": [
+        {
+            "date" : "2020-06-26T21:00:00+0200",
+            "endDate" : "2020-06-26T21:55:00+0200",
+            "title": "Clase salsa",
+            "place" : "SalsaBachata",
+            "color" : 1
+        },
+        {
+            "date" : "2020-06-27T09:00:00+0200",
+            "endDate" : "2020-06-27T09:30:00+0200",
+            "title": "Recoger coche del taller",
+            "place" : "Taller",
+            "color" : 2
+        }
+        ,
+        {
+            "date" : "2020-06-27T15:00:00+0200",
+            "endDate" : "2020-06-27T18:30:00+0200",
+            "title": "Barbacoa",
+            "color" : 3
+        }
+        ,
+        {
+            "date" : "2020-08-30T12:00:00+0200",
+            "title": "Cumpleaños",
+            "color" : 4
+        }
+    ]
+}

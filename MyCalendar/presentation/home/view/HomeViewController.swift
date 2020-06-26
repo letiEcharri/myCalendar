@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeViewControllerDelegate {
-    
+    func reloadData()
 }
 
 class HomeViewController: BaseViewController {
@@ -51,13 +51,21 @@ class HomeViewController: BaseViewController {
     }
     @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+            tableView.dataSource = self
+            tableView.register(HomeTableViewCell.nib, forCellReuseIdentifier: HomeTableViewCell.identifier)
+        }
+    }
+    
     //    MARK: Properties
     let titlePicker = UIPickerView()
     var calendarViewController: CalendarViewController?
     
     let maxCalendarHeigh: CGFloat = 300
     let minCalendarHeigh: CGFloat = 15
-    var closedCalendar = false
+    var closedCalendar = true
     
     var presenter: HomePresenterDelegate
 
@@ -73,6 +81,7 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.viewDidLoad()
 
         title = "myCalendar"
         configureTitlePicker()
@@ -173,7 +182,9 @@ class HomeViewController: BaseViewController {
 
 //  MARK: HomeViewControllerDelegate
 extension HomeViewController: HomeViewControllerDelegate {
-    
+    func reloadData() {
+        tableView.reloadData()
+    }
 }
 
 //  MARK: Picker Delegate & DataSource
@@ -206,5 +217,30 @@ extension HomeViewController: UITextFieldDelegate {
 
         textField.resignFirstResponder()
         return false
+    }
+}
+
+//  MARK: Table Delegate & DataSource
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter.getNumberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.getNumberOfItemsFor(section: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier) as? HomeTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        let item = presenter.events[indexPath.section].items[indexPath.row]
+        
+        cell.set(data: item)
+        cell.timeLabel.isHidden = indexPath.row != 0
+        
+        return cell
     }
 }

@@ -13,6 +13,7 @@ protocol HomePresenterDelegate {
     var currentMonth: String { get }
     var currentYear: String { get }
     var pickerSelectedDate: Date? { get set }
+    var events: [HomePresenter.Model] { get }
     
     func getMonths() -> [String]
     func getYears() -> [String]
@@ -20,4 +21,7 @@ protocol HomePresenterDelegate {
     func saveSelectedDate(month: Int, year: String)
     func getCalendarViewController() -> CalendarViewController?
     func format(date: Date) -> String
+    func getNumberOfSections() -> Int
+    func getNumberOfItemsFor(section: Int) -> Int
+    func viewDidLoad()
 }

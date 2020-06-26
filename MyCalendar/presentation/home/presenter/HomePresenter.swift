@@ -9,6 +9,11 @@
 import Foundation
 
 class HomePresenter: BasePresenter {
+    
+    struct Model {
+        var date: String
+        var items: [EventItemModel]
+    }
 
 //    MARK: Properties
     var currentMonth: String {
@@ -30,18 +35,32 @@ class HomePresenter: BasePresenter {
     
     var pickerSelectedDate: Date? = Date()
     
+    var events: [Model] = [Model]()
+    
     
     var ui: HomeViewControllerDelegate?
     let router: HomeRouterDelegate
+    let interactor: HomeInteractorDelegate
 
 //    MARK: Initialization
-    init(router: HomeRouterDelegate) {
+    init(router: HomeRouterDelegate, interactor: HomeInteractorDelegate) {
         self.router = router
+        self.interactor = interactor
     }
 }
 
 //    MARK: HomePresenterDelegate
 extension HomePresenter: HomePresenterDelegate {
+    func viewDidLoad() {
+        
+        interactor.getEvents { (list, error) in
+            if let list = list {
+                self.events = list
+                self.ui?.reloadData()
+            }
+        }
+    }
+    
     func getMonths() -> [String] {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "es_ES")
@@ -86,5 +105,13 @@ extension HomePresenter: HomePresenterDelegate {
         dateFormatter.dateFormat = "MMMM yyyy"
         dateFormatter.locale = Locale(identifier: "es_ES")
         return dateFormatter.string(from: date)
+    }
+    
+    func getNumberOfSections() -> Int {
+        return events.count
+    }
+    
+    func getNumberOfItemsFor(section: Int) -> Int {
+        return events[section].items.count
     }
 }

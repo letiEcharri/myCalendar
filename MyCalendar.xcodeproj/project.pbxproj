@@ -28,6 +28,15 @@
 		F070062C249FA48F0062799C /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F070062A249FA48F0062799C /* CalendarViewController.xib */; };
 		F0700631249FA4D40062799C /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0700630249FA4D40062799C /* CalendarPresenter.swift */; };
 		F0DF0F4424A2900D00FAF6F4 /* CalendarSelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F4324A2900D00FAF6F4 /* CalendarSelectedButton.swift */; };
+		F0DF0F4824A65CA100FAF6F4 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F4624A65CA100FAF6F4 /* HomeTableViewCell.swift */; };
+		F0DF0F4924A65CA100FAF6F4 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0DF0F4724A65CA100FAF6F4 /* HomeTableViewCell.xib */; };
+		F0DF0F5424A6723F00FAF6F4 /* StructCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F5324A6723F00FAF6F4 /* StructCodable.swift */; };
+		F0DF0F5624A6732E00FAF6F4 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F5524A6732E00FAF6F4 /* EventModel.swift */; };
+		F0DF0F5824A676A500FAF6F4 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = F0DF0F5724A676A500FAF6F4 /* events.json */; };
+		F0DF0F5A24A676EC00FAF6F4 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F5924A676EC00FAF6F4 /* BaseDataSource.swift */; };
+		F0DF0F6124A67B6A00FAF6F4 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F6024A67B6A00FAF6F4 /* ErrorModel.swift */; };
+		F0DF0F6324A67DFA00FAF6F4 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F6224A67DFA00FAF6F4 /* HomeDataSource.swift */; };
+		F0DF0F6524A6820800FAF6F4 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F6424A6820800FAF6F4 /* HomeInteractor.swift */; };
 		F0F7B16E249E41BF005178A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B16D249E41BF005178A1 /* AppDelegate.swift */; };
 		F0F7B170249E41BF005178A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */; };
 		F0F7B173249E41BF005178A1 /* MyCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B171249E41BF005178A1 /* MyCalendar.xcdatamodeld */; };
@@ -85,6 +94,15 @@
 		F070062A249FA48F0062799C /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		F0700630249FA4D40062799C /* CalendarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
 		F0DF0F4324A2900D00FAF6F4 /* CalendarSelectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSelectedButton.swift; sourceTree = "<group>"; };
+		F0DF0F4624A65CA100FAF6F4 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		F0DF0F4724A65CA100FAF6F4 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		F0DF0F5324A6723F00FAF6F4 /* StructCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructCodable.swift; sourceTree = "<group>"; };
+		F0DF0F5524A6732E00FAF6F4 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		F0DF0F5724A676A500FAF6F4 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
+		F0DF0F5924A676EC00FAF6F4 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
+		F0DF0F6024A67B6A00FAF6F4 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		F0DF0F6224A67DFA00FAF6F4 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
+		F0DF0F6424A6820800FAF6F4 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		F0F7B16A249E41BF005178A1 /* MyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F7B16D249E41BF005178A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +230,89 @@
 			path = presenter;
 			sourceTree = "<group>";
 		};
+		F0DF0F4524A65C6400FAF6F4 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0DF0F4624A65CA100FAF6F4 /* HomeTableViewCell.swift */,
+				F0DF0F4724A65CA100FAF6F4 /* HomeTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		F0DF0F4D24A6653600FAF6F4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F0DF0F5F24A67B5800FAF6F4 /* common */,
+				F0DF0F4E24A6653F00FAF6F4 /* home */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F0DF0F4E24A6653F00FAF6F4 /* home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		F0DF0F5124A66D3100FAF6F4 /* jsonDEMO */ = {
+			isa = PBXGroup;
+			children = (
+				F0DF0F5724A676A500FAF6F4 /* events.json */,
+			);
+			path = jsonDEMO;
+			sourceTree = "<group>";
+		};
+		F0DF0F5224A6720500FAF6F4 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				F0DF0F5324A6723F00FAF6F4 /* StructCodable.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		F0DF0F5B24A6779500FAF6F4 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				F0DF0F5C24A677A900FAF6F4 /* home */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		F0DF0F5C24A677A900FAF6F4 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				F0DF0F5E24A677C400FAF6F4 /* interactor */,
+				F0DF0F5D24A677B600FAF6F4 /* datasource */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		F0DF0F5D24A677B600FAF6F4 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				F0DF0F6224A67DFA00FAF6F4 /* HomeDataSource.swift */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		F0DF0F5E24A677C400FAF6F4 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F0DF0F6424A6820800FAF6F4 /* HomeInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		F0DF0F5F24A67B5800FAF6F4 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				F0DF0F5524A6732E00FAF6F4 /* EventModel.swift */,
+				F0DF0F6024A67B6A00FAF6F4 /* ErrorModel.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		F0F7B161249E41BF005178A1 = {
 			isa = PBXGroup;
 			children = (
@@ -236,7 +337,10 @@
 			isa = PBXGroup;
 			children = (
 				F0F7B1A5249E4749005178A1 /* core */,
+				F0DF0F4D24A6653600FAF6F4 /* model */,
 				F0F7B1A0249E46C3005178A1 /* presentation */,
+				F0DF0F5B24A6779500FAF6F4 /* domain */,
+				F0DF0F5124A66D3100FAF6F4 /* jsonDEMO */,
 				F0F7B16D249E41BF005178A1 /* AppDelegate.swift */,
 				F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */,
 				F0F7B176249E41BF005178A1 /* Assets.xcassets */,
@@ -296,6 +400,7 @@
 		F0F7B1A2249E46E1005178A1 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				F0DF0F4524A65C6400FAF6F4 /* cell */,
 				F0F7B1AA249E47B8005178A1 /* HomeViewController.swift */,
 				F0F7B1AB249E47B8005178A1 /* HomeViewController.xib */,
 			);
@@ -322,6 +427,7 @@
 		F0F7B1A5249E4749005178A1 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				F0DF0F5224A6720500FAF6F4 /* common */,
 				F0700610249E57740062799C /* fonts */,
 				F070060D249E54EF0062799C /* ui */,
 				F0F7B1A7249E475C005178A1 /* bases */,
@@ -347,6 +453,7 @@
 				F0F7B1AE249E49EE005178A1 /* BaseRouter.swift */,
 				F0F7B1B4249E4C91005178A1 /* BasePresenter.swift */,
 				F0F7B1B6249E4F1F005178A1 /* MainRouter.swift */,
+				F0DF0F5924A676EC00FAF6F4 /* BaseDataSource.swift */,
 			);
 			path = bases;
 			sourceTree = "<group>";
@@ -463,11 +570,13 @@
 				F070062C249FA48F0062799C /* CalendarViewController.xib in Resources */,
 				F0F7B17D249E41BF005178A1 /* LaunchScreen.storyboard in Resources */,
 				F0F7B17A249E41BF005178A1 /* Preview Assets.xcassets in Resources */,
+				F0DF0F5824A676A500FAF6F4 /* events.json in Resources */,
 				F0700612249E579A0062799C /* Organico-DEMO.ttf in Resources */,
 				F070061E249E5ABE0062799C /* Aller_It.ttf in Resources */,
 				F0F7B177249E41BF005178A1 /* Assets.xcassets in Resources */,
 				F070061C249E5ABE0062799C /* Aller_Rg.ttf in Resources */,
 				F0700620249E5ABE0062799C /* Aller_BdIt.ttf in Resources */,
+				F0DF0F4924A65CA100FAF6F4 /* HomeTableViewCell.xib in Resources */,
 				F0F7B1AD249E47B8005178A1 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +608,7 @@
 				F0F7B1B5249E4C91005178A1 /* BasePresenter.swift in Sources */,
 				F0700631249FA4D40062799C /* CalendarPresenter.swift in Sources */,
 				F0494BD2249FA770007FAD83 /* CalendarCollectionViewCell.swift in Sources */,
+				F0DF0F6124A67B6A00FAF6F4 /* ErrorModel.swift in Sources */,
 				F0F7B1A9249E4779005178A1 /* BaseViewController.swift in Sources */,
 				F0700614249E58190062799C /* Fonts.swift in Sources */,
 				F0F7B16E249E41BF005178A1 /* AppDelegate.swift in Sources */,
@@ -506,14 +616,20 @@
 				F0F7B170249E41BF005178A1 /* SceneDelegate.swift in Sources */,
 				F0F7B1B3249E4C48005178A1 /* HomePresenter.swift in Sources */,
 				F0494BD5249FAFDC007FAD83 /* CalendarRouter.swift in Sources */,
+				F0DF0F5424A6723F00FAF6F4 /* StructCodable.swift in Sources */,
 				F04D143C249FECF30089CDDE /* CALayer+Borders.swift in Sources */,
 				F0F7B173249E41BF005178A1 /* MyCalendar.xcdatamodeld in Sources */,
 				F0700626249E84060062799C /* HomePresenterDelegate.swift in Sources */,
+				F0DF0F4824A65CA100FAF6F4 /* HomeTableViewCell.swift in Sources */,
 				F0700624249E754F0062799C /* DateFormatter+Date.swift in Sources */,
 				F0F7B1B7249E4F1F005178A1 /* MainRouter.swift in Sources */,
+				F0DF0F5A24A676EC00FAF6F4 /* BaseDataSource.swift in Sources */,
+				F0DF0F6324A67DFA00FAF6F4 /* HomeDataSource.swift in Sources */,
 				F0DF0F4424A2900D00FAF6F4 /* CalendarSelectedButton.swift in Sources */,
 				F04D143A249FEC270089CDDE /* UIView+Style.swift in Sources */,
+				F0DF0F5624A6732E00FAF6F4 /* EventModel.swift in Sources */,
 				F0F7B1AC249E47B8005178A1 /* HomeViewController.swift in Sources */,
+				F0DF0F6524A6820800FAF6F4 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

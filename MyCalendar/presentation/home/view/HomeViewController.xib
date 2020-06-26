@@ -15,6 +15,7 @@
                 <outlet property="calendarViewHeight" destination="GCI-rs-MWz" id="zwt-oB-lsM"/>
                 <outlet property="leftArrowButton" destination="0Zd-Uv-g7k" id="45Y-eq-N4Y"/>
                 <outlet property="rightArrowButton" destination="9nn-W1-wrM" id="OWn-3T-bhC"/>
+                <outlet property="tableView" destination="orL-sR-ihn" id="ncr-cX-gn4"/>
                 <outlet property="titleTextField" destination="Dxb-kj-ZWy" id="4pT-65-De2"/>
                 <outlet property="topView" destination="72x-Ly-Cj4" id="YGz-xv-WXo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -25,6 +26,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="orL-sR-ihn">
+                    <rect key="frame" x="0.0" y="139" width="414" height="674"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0j-1f-4nr">
                     <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                     <items>
@@ -81,10 +86,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6U-Oz-zPk">
-                    <rect key="frame" x="0.0" y="114" width="414" height="300"/>
+                    <rect key="frame" x="0.0" y="114" width="414" height="15"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgp-KP-iCe">
-                            <rect key="frame" x="182" y="290" width="50" height="5"/>
+                            <rect key="frame" x="182" y="5" width="50" height="5"/>
                             <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="5" id="58T-4d-07c"/>
@@ -94,13 +99,13 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="300" id="GCI-rs-MWz"/>
+                        <constraint firstAttribute="height" constant="15" id="GCI-rs-MWz"/>
                         <constraint firstItem="zgp-KP-iCe" firstAttribute="centerX" secondItem="Y6U-Oz-zPk" secondAttribute="centerX" id="fG9-Mr-yKp"/>
                         <constraint firstAttribute="bottom" secondItem="zgp-KP-iCe" secondAttribute="bottom" constant="5" id="kA8-ll-rIT"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0m-dV-eHi">
-                    <rect key="frame" x="0.0" y="414" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="129" width="414" height="1"/>
                     <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="juv-gl-Cps"/>
@@ -109,9 +114,12 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="orL-sR-ihn" secondAttribute="trailing" id="1lH-VU-RNU"/>
+                <constraint firstItem="orL-sR-ihn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="95" id="1mU-zf-EIQ"/>
                 <constraint firstAttribute="trailing" secondItem="q0j-1f-4nr" secondAttribute="trailing" id="8nK-Yt-w4k"/>
                 <constraint firstItem="n0m-dV-eHi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9HH-lw-RLj"/>
                 <constraint firstItem="n0m-dV-eHi" firstAttribute="top" secondItem="Y6U-Oz-zPk" secondAttribute="bottom" id="CyO-lF-k87"/>
+                <constraint firstItem="orL-sR-ihn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KXE-aN-dV5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n0m-dV-eHi" secondAttribute="trailing" id="LTz-yv-2Ky"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="q0j-1f-4nr" secondAttribute="bottom" id="Odt-Ug-RGP"/>
                 <constraint firstItem="Y6U-Oz-zPk" firstAttribute="top" secondItem="72x-Ly-Cj4" secondAttribute="bottom" id="TBz-46-aqC"/>
@@ -119,6 +127,7 @@
                 <constraint firstItem="Y6U-Oz-zPk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZM8-ng-nNE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Y6U-Oz-zPk" secondAttribute="trailing" id="dgZ-f7-MLh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="72x-Ly-Cj4" secondAttribute="trailing" id="f6A-lR-JW4"/>
+                <constraint firstItem="q0j-1f-4nr" firstAttribute="top" secondItem="orL-sR-ihn" secondAttribute="bottom" id="gCX-3b-evs"/>
                 <constraint firstItem="q0j-1f-4nr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yqP-3R-Le9"/>
                 <constraint firstItem="72x-Ly-Cj4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="z2m-1L-zqy"/>
             </constraints>
