@@ -9,9 +9,9 @@
 import UIKit
 
 class Colors {
-    // #ff53a1 177 83 161
+    // #B153A1 177 83 161
     static let appPurple = UIColor(red: 177/255.0, green: 83/255.0, blue: 161/255.0, alpha: 1)
     
-    // #ff53a1 177 83 161
-    static let lightPurple = UIColor(red: 177/255.0, green: 83/255.0, blue: 161/255.0, alpha: 0.2)
+    // #EDD3E9 237 211 233
+    static let lightPurple = UIColor(red: 237/255.0, green: 211/255.0, blue: 233/255.0, alpha: 1)
 }

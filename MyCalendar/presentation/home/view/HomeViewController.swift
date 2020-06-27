@@ -184,6 +184,7 @@ class HomeViewController: BaseViewController {
 extension HomeViewController: HomeViewControllerDelegate {
     func reloadData() {
         tableView.reloadData()
+//        tableView.selectRow(at: IndexPath(row: 1, section: 1), animated: false, scrollPosition: .top)
     }
 }
 
@@ -242,5 +243,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.timeLabel.isHidden = indexPath.row != 0
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
 }

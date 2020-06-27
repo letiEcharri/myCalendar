@@ -37,7 +37,7 @@ class HomeTableViewCell: UITableViewCell {
     }
 
     private func configureView() {
-        timeLabel.font = .aller(style: .regular, size: 18)
+        timeLabel.font = .aller(style: .light, size: 18)
         titleLabel.font = .aller(style: .bold, size: 16)
         timeFullLabel.font = .aller(style: .regular, size: 14)
         placeLabel.font = .aller(style: .regular, size: 14)
@@ -56,6 +56,9 @@ class HomeTableViewCell: UITableViewCell {
         dateFormatter.dateFormat = "dd MMM"
         let day = dateFormatter.string(from: data.getDate())
         timeLabel.text = day.uppercased()
+        if data.getDate().isToday() {
+            timeLabel.font = .aller(style: .bold, size: 18)
+        }
         
         dateFormatter.dateFormat = "HH:mm"
         var hour = dateFormatter.string(from: data.getDate())
@@ -75,4 +78,11 @@ class HomeTableViewCell: UITableViewCell {
         mainView.backgroundColor = data.getColor()?.get()
     }
     
+}
+
+extension Date {
+    
+    func isToday() -> Bool {
+        return Calendar.current.isDateInToday(self)
+    }
 }
