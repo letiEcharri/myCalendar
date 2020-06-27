@@ -24,4 +24,5 @@ protocol HomePresenterDelegate {
     func getNumberOfSections() -> Int
     func getNumberOfItemsFor(section: Int) -> Int
     func viewDidLoad()
+    func getSelectedIndexPath() -> IndexPath
 }

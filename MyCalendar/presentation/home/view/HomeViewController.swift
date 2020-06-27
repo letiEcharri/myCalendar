@@ -183,8 +183,10 @@ class HomeViewController: BaseViewController {
 //  MARK: HomeViewControllerDelegate
 extension HomeViewController: HomeViewControllerDelegate {
     func reloadData() {
-        tableView.reloadData()
-//        tableView.selectRow(at: IndexPath(row: 1, section: 1), animated: false, scrollPosition: .top)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.tableView.selectRow(at: self.presenter.getSelectedIndexPath(), animated: false, scrollPosition: .top)
+        }
     }
 }
 

@@ -18,6 +18,7 @@ struct EventItemModel: StructCodable {
     var title: String
     var place: String?
     var color: Int?
+    var holiday: Bool?
     
     func getDate() -> Date {
         let dateFormatter = DateFormatter()
@@ -36,24 +37,8 @@ struct EventItemModel: StructCodable {
     func getColor() -> Color? {
         return Color(rawValue: self.color ?? 1)
     }
-}
-
-enum Color: Int {
-    case blue = 1
-    case red = 2
-    case brown = 3
-    case green = 4
     
-    func get() -> UIColor {
-        switch self {
-        case .blue:
-            return .blue
-        case .red:
-            return .red
-        case .brown:
-            return .brown
-        case .green:
-            return .green
-        }
+    func isHoliday() -> Bool {
+        return holiday != nil
     }
 }

@@ -56,7 +56,12 @@ extension HomePresenter: HomePresenterDelegate {
         interactor.getEvents { (list, error) in
             if let list = list {
                 self.events = list
-                self.ui?.reloadData()
+                self.interactor.getHolidays(calendarEvents: list) { (list2, error2) in
+                    if let list2 = list2 {
+                        self.events = list2
+                    }
+                    self.ui?.reloadData()
+                }
             }
         }
     }
@@ -113,5 +118,12 @@ extension HomePresenter: HomePresenterDelegate {
     
     func getNumberOfItemsFor(section: Int) -> Int {
         return events[section].items.count
+    }
+    
+    func getSelectedIndexPath() -> IndexPath {
+        let today = events.firstIndex(where: { ($0.date.date ?? Date()).isToday() })
+        let next = events.firstIndex(where: { ($0.date.date ?? Date()) > Date() }) ?? 0
+        
+        return IndexPath(row: 0, section: today ?? next)
     }
 }

@@ -12,6 +12,7 @@ typealias EventsListBlock = (_ list: [HomePresenter.Model]?, _ error: String?) -
 
 protocol HomeInteractorDelegate {
     func getEvents(completion: @escaping EventsListBlock)
+    func getHolidays(calendarEvents: [HomePresenter.Model]?, completion: @escaping EventsListBlock)
 }
 
 class HomeInteractor {
@@ -29,11 +30,11 @@ extension HomeInteractor: HomeInteractorDelegate {
             if let events = events, let list = events.events {
                 
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
                 dateFormatter.locale = Locale(identifier: "es_ES")
+                dateFormatter.dateFormat = "yyyy-MM-dd"
                 
                 let dataGrouped = Dictionary(grouping: list) { (item) -> String in
-                    let date = Calendar.current.dateComponents([.day, .year, .month], from: (item.getDate()))
+                    let date = Calendar.current.dateComponents([.day, .year, .month], from: item.getDate())
                     return dateFormatter.string(from: Calendar.current.date(from: date) ?? Date())
                 }
                 
@@ -46,5 +47,51 @@ extension HomeInteractor: HomeInteractorDelegate {
             }
             completion(nil, error?.error?.description)
         }
+    }
+    
+    func getHolidays(calendarEvents: [HomePresenter.Model]?, completion: @escaping EventsListBlock) {
+        datasource.getHolidays { (model, error) in
+            if let model = model {
+                let holidays = model.holidays
+                let formattedHolidays = holidays.compactMap { item in
+                    EventItemModel(date: self.addYearTo(date: item.date), endDate: nil, title: item.name, place: nil, color: 0, holiday: true)
+                }
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.locale = Locale(identifier: "es_ES")
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                
+                let holidayGrouped = Dictionary(grouping: formattedHolidays) { (item) -> String in
+                    let date = Calendar.current.dateComponents([.day, .year, .month], from: item.getDate())
+                    return dateFormatter.string(from: Calendar.current.date(from: date) ?? Date())
+                }
+                
+                let dataHoliday = holidayGrouped.compactMap { (key, value) in
+                    HomePresenter.Model(date: key, items: value)
+                }
+                
+                if var calendarEvents = calendarEvents  {
+                    for item in dataHoliday {
+                        let checkDate = calendarEvents.firstIndex(where: { $0.date == item.date })
+                        if let checkDate = checkDate {
+                            calendarEvents[checkDate].items.append(contentsOf: item.items)
+                        } else {
+                            calendarEvents.append(item)
+                        }
+                    }
+                    let dataSorted = calendarEvents.sorted(by: { $0.date < $1.date } )
+                    completion(dataSorted, nil)
+                } else {
+                    let dataSorted = dataHoliday.sorted(by: { $0.date < $1.date } )
+                    completion(dataSorted, nil)
+                }
+            } else {
+                completion(nil, error?.error?.description)
+            }
+        }
+    }
+    
+    private func addYearTo(date: String) -> String {
+        return date.replacingOccurrences(of: "2019", with: "2020") + "T00:00:00+0200"
     }
 }

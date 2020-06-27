@@ -26,9 +26,6 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     var data: EventItemModel?
-//    var date: Date?
-//    var place: String?
-//    var color: UIColor?
     
 //    MARK: Initialization
     override func awakeFromNib() {
@@ -58,6 +55,8 @@ class HomeTableViewCell: UITableViewCell {
         timeLabel.text = day.uppercased()
         if data.getDate().isToday() {
             timeLabel.font = .aller(style: .bold, size: 18)
+        } else {
+            timeLabel.font = .aller(style: .light, size: 18)
         }
         
         dateFormatter.dateFormat = "HH:mm"
@@ -66,6 +65,7 @@ class HomeTableViewCell: UITableViewCell {
             hour += " - " + dateFormatter.string(from: endHour)
         }
         timeFullLabel.text = hour
+        timeFullLabel.isHidden = data.isHoliday()
         
         titleLabel.text = data.title
         

@@ -37,6 +37,7 @@
 		F0DF0F6124A67B6A00FAF6F4 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F6024A67B6A00FAF6F4 /* ErrorModel.swift */; };
 		F0DF0F6324A67DFA00FAF6F4 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F6224A67DFA00FAF6F4 /* HomeDataSource.swift */; };
 		F0DF0F6524A6820800FAF6F4 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F6424A6820800FAF6F4 /* HomeInteractor.swift */; };
+		F0F3A22E24A7BF1D00ED3B6E /* HolidayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3A22D24A7BF1D00ED3B6E /* HolidayModel.swift */; };
 		F0F7B16E249E41BF005178A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B16D249E41BF005178A1 /* AppDelegate.swift */; };
 		F0F7B170249E41BF005178A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */; };
 		F0F7B173249E41BF005178A1 /* MyCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B171249E41BF005178A1 /* MyCalendar.xcdatamodeld */; };
@@ -103,6 +104,7 @@
 		F0DF0F6024A67B6A00FAF6F4 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		F0DF0F6224A67DFA00FAF6F4 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		F0DF0F6424A6820800FAF6F4 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		F0F3A22D24A7BF1D00ED3B6E /* HolidayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayModel.swift; sourceTree = "<group>"; };
 		F0F7B16A249E41BF005178A1 /* MyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F7B16D249E41BF005178A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 			children = (
 				F0DF0F5524A6732E00FAF6F4 /* EventModel.swift */,
 				F0DF0F6024A67B6A00FAF6F4 /* ErrorModel.swift */,
+				F0F3A22D24A7BF1D00ED3B6E /* HolidayModel.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				F0DF0F6324A67DFA00FAF6F4 /* HomeDataSource.swift in Sources */,
 				F0DF0F4424A2900D00FAF6F4 /* CalendarSelectedButton.swift in Sources */,
 				F04D143A249FEC270089CDDE /* UIView+Style.swift in Sources */,
+				F0F3A22E24A7BF1D00ED3B6E /* HolidayModel.swift in Sources */,
 				F0DF0F5624A6732E00FAF6F4 /* EventModel.swift in Sources */,
 				F0F7B1AC249E47B8005178A1 /* HomeViewController.swift in Sources */,
 				F0DF0F6524A6820800FAF6F4 /* HomeInteractor.swift in Sources */,
