@@ -50,20 +50,21 @@ extension BaseDataSource: DataSource {
     }
     
     func executeRequest(url: String, completion: @escaping CompletionBlock) {
-        DispatchQueue.main.async {
-            if let url = URL(string: url) {
-                URLSession.shared.dataTask(with: url) { data, response, error in
-                    if let data = data {
-                        completion(Response.success(data))
-                    } else {
-                        if let response = response as? HTTPURLResponse {
-                            completion(Response.failure(ErrorModel(error: ErrorContentModel(code: response.statusCode, description: error?.localizedDescription))))
-                        } else {
-                            completion(Response.failure(ErrorModel(error: ErrorContentModel(code: nil, description: error?.localizedDescription))))
-                        }
-                    }
-                }.resume()
-            }
-        }
+        executeDemoRequest(url: "holidays", completion: completion)
+//        DispatchQueue.main.async {
+//            if let url = URL(string: url) {
+//                URLSession.shared.dataTask(with: url) { data, response, error in
+//                    if let data = data {
+//                        completion(Response.success(data))
+//                    } else {
+//                        if let response = response as? HTTPURLResponse {
+//                            completion(Response.failure(ErrorModel(error: ErrorContentModel(code: response.statusCode, description: error?.localizedDescription))))
+//                        } else {
+//                            completion(Response.failure(ErrorModel(error: ErrorContentModel(code: nil, description: error?.localizedDescription))))
+//                        }
+//                    }
+//                }.resume()
+//            }
+//        }
     }
 }

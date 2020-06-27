@@ -38,6 +38,7 @@
 		F0DF0F6324A67DFA00FAF6F4 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F6224A67DFA00FAF6F4 /* HomeDataSource.swift */; };
 		F0DF0F6524A6820800FAF6F4 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF0F6424A6820800FAF6F4 /* HomeInteractor.swift */; };
 		F0F3A22E24A7BF1D00ED3B6E /* HolidayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3A22D24A7BF1D00ED3B6E /* HolidayModel.swift */; };
+		F0F3A23024A7E18A00ED3B6E /* holidays.json in Resources */ = {isa = PBXBuildFile; fileRef = F0F3A22F24A7E18A00ED3B6E /* holidays.json */; };
 		F0F7B16E249E41BF005178A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B16D249E41BF005178A1 /* AppDelegate.swift */; };
 		F0F7B170249E41BF005178A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */; };
 		F0F7B173249E41BF005178A1 /* MyCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0F7B171249E41BF005178A1 /* MyCalendar.xcdatamodeld */; };
@@ -105,6 +106,7 @@
 		F0DF0F6224A67DFA00FAF6F4 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		F0DF0F6424A6820800FAF6F4 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		F0F3A22D24A7BF1D00ED3B6E /* HolidayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayModel.swift; sourceTree = "<group>"; };
+		F0F3A22F24A7E18A00ED3B6E /* holidays.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = holidays.json; sourceTree = "<group>"; };
 		F0F7B16A249E41BF005178A1 /* MyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F7B16D249E41BF005178A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0F7B16F249E41BF005178A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		F0DF0F5124A66D3100FAF6F4 /* jsonDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F0F3A22F24A7E18A00ED3B6E /* holidays.json */,
 				F0DF0F5724A676A500FAF6F4 /* events.json */,
 			);
 			path = jsonDEMO;
@@ -571,6 +574,7 @@
 				F070061F249E5ABE0062799C /* Aller_Lt.ttf in Resources */,
 				F0494BD3249FA770007FAD83 /* CalendarCollectionViewCell.xib in Resources */,
 				F070062C249FA48F0062799C /* CalendarViewController.xib in Resources */,
+				F0F3A23024A7E18A00ED3B6E /* holidays.json in Resources */,
 				F0F7B17D249E41BF005178A1 /* LaunchScreen.storyboard in Resources */,
 				F0F7B17A249E41BF005178A1 /* Preview Assets.xcassets in Resources */,
 				F0DF0F5824A676A500FAF6F4 /* events.json in Resources */,
