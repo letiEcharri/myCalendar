@@ -49,6 +49,10 @@ class CalendarViewController: BaseViewController {
         presenter.selectedDate = date
         collectionView.reloadData()
     }
+    
+    func set(events: [EventItemModel]) {
+        presenter.events = events
+    }
 }
 
 //   MARK: Calendar Delegate
@@ -69,28 +73,29 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         cell.delegate = self
 
         let firstDay = presenter.selectedDate.firstDayOfTheMonth
+        var date: Date?
         
         if indexPath.row < 7 {
             cell.setDay(name: presenter.getDays()[indexPath.row])
         } else {
             if firstDay.weekday == 1  {
                 if indexPath.row < 13 {
-                    cell.set(day: "", selected: false, date: nil)
+                    cell.set(day: "", selected: false, date: nil, events: nil)
                 } else {
                     let day = indexPath.row - 12
-                    let date = day > 1 ? Calendar.current.date(byAdding: .day, value: day - 1, to: firstDay) : firstDay
+                    date = day > 1 ? Calendar.current.date(byAdding: .day, value: day - 1, to: firstDay) : firstDay
                     let selected = date?.get(component: .day) == presenter.selectedDate.get(component: .day) && date?.get(component: .month) == presenter.selectedDate.get(component: .month) && date?.get(component: .year) == presenter.selectedDate.get(component: .year)
-                    cell.set(day: "\(day)", selected: selected, date: date)
+                    cell.set(day: "\(day)", selected: selected, date: date, events: presenter.getEventColors(date: date))
                 }
                 
             } else {
                 if indexPath.row < (5 + firstDay.weekday) {
-                    cell.set(day: "", selected: false, date: nil)
+                    cell.set(day: "", selected: false, date: nil, events: nil)
                 } else {
                     let day = indexPath.row - 6 - (firstDay.weekday - 2)
-                    let date = day > 1 ? Calendar.current.date(byAdding: .day, value: day - 1, to: firstDay) : firstDay
+                    date = day > 1 ? Calendar.current.date(byAdding: .day, value: day - 1, to: firstDay) : firstDay
                     let selected = date?.get(component: .day) == presenter.selectedDate.get(component: .day) && date?.get(component: .month) == presenter.selectedDate.get(component: .month) && date?.get(component: .year) == presenter.selectedDate.get(component: .year)
-                    cell.set(day: "\(day)", selected: selected, date: date)
+                    cell.set(day: "\(day)", selected: selected, date: date, events: presenter.getEventColors(date: date))
                 }
             }
         }

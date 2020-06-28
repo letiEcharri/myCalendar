@@ -150,6 +150,8 @@ class HomeViewController: BaseViewController {
         panGesture.delaysTouchesBegan = false
         panGesture.delaysTouchesEnded = false
         calendarView.addGestureRecognizer(panGesture)
+        
+        calendarViewController?.set(events: presenter.retrieveEvents())
     }
     
     @objc

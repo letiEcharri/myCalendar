@@ -12,7 +12,7 @@ struct EventModel: StructCodable {
     var events: [EventItemModel]?
 }
 
-struct EventItemModel: StructCodable {
+struct EventItemModel: StructCodable, Equatable {
     var date: String
     var endDate: String?
     var title: String

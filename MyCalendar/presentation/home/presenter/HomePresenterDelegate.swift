@@ -25,4 +25,5 @@ protocol HomePresenterDelegate {
     func getNumberOfItemsFor(section: Int) -> Int
     func viewDidLoad()
     func getSelectedIndexPath() -> IndexPath
+    func retrieveEvents() -> [EventItemModel]
 }

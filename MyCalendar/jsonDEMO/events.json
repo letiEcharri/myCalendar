@@ -13,18 +13,36 @@
             "title": "Recoger coche del taller",
             "place" : "Taller",
             "color" : 2
-        }
-        ,
+        },
         {
             "date" : "2020-06-28T15:00:00+0200",
             "endDate" : "2020-06-27T18:30:00+0200",
             "title": "Barbacoa",
             "color" : 3
-        }
-        ,
+        },
         {
             "date" : "2020-08-30T12:00:00+0200",
             "title": "Cumpleaños",
+            "color" : 4
+        },
+        {
+            "date" : "2020-06-29T12:00:00+0200",
+            "title": "Cumpleaños Isabel",
+            "color" : 4
+        },
+        {
+            "date" : "2020-06-29T12:00:00+0200",
+            "title": "Cumpleaños Carlos",
+            "color" : 4
+        },
+        {
+            "date" : "2020-06-29T12:00:00+0200",
+            "title": "Cumpleaños José",
+            "color" : 4
+        },
+        {
+            "date" : "2020-06-29T12:00:00+0200",
+            "title": "Cumpleaños Rosa",
             "color" : 4
         }
     ]

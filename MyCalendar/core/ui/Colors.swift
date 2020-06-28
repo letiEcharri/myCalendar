@@ -26,7 +26,7 @@ enum Color: Int {
         case .brown:
             return .brown
         case .green:
-            return .green
+            return .systemGreen
         }
     }
 }

@@ -6,13 +6,15 @@
 //  Copyright © 2020 Leticia Echarri. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol CalendarPresenterDelegate {
     var selectedDate: Date { get set }
+    var events: [EventItemModel]? { get set }
     
     func getDays() -> [String]
     func numberOfDays() -> Int
+    func getEventColors(date: Date?) -> [UIColor]?
 }
 
 class CalendarPresenter: BasePresenter {
@@ -22,6 +24,7 @@ class CalendarPresenter: BasePresenter {
     let router: CalendarRouterDelegate
     
     var selectedDate: Date = Date()
+    var events: [EventItemModel]?
     
 //    MARK: Initialization
     init(router: CalendarRouterDelegate) {
@@ -59,5 +62,25 @@ extension CalendarPresenter: CalendarPresenterDelegate {
         }
         
         return 0
+    }
+    
+    func getEventColors(date: Date?) -> [UIColor]? {
+        var colors: [UIColor]?
+        if let date = date {
+            let eventsRetrieved = events?.filter {
+                Calendar.current.compare(date, to: $0.getDate(), toGranularity: .day) == .orderedSame
+            }
+            
+            if let eventsRetrieved = eventsRetrieved, eventsRetrieved.count > 0 {
+                let colorsFiltered = eventsRetrieved.filter( { $0.color != nil } )
+                if colorsFiltered.count > 0 {
+                    colors = [UIColor]()
+                    let retrivedColors = eventsRetrieved.compactMap { Color(rawValue: $0.color!)?.get() }
+                    colors?.append(contentsOf: retrivedColors)
+                }
+            }
+        }
+        
+        return colors
     }
 }

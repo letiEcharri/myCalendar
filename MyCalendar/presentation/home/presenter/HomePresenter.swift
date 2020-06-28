@@ -126,4 +126,8 @@ extension HomePresenter: HomePresenterDelegate {
         
         return IndexPath(row: 0, section: today ?? next)
     }
+    
+    func retrieveEvents() -> [EventItemModel] {
+        return Array(events.compactMap { $0.items }.joined())
+    }
 }

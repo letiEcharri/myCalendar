@@ -42,6 +42,10 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         self.backgroundColor = .clear
         numberLabel.font = .aller(style: .regular, size: 12)
         numberButton.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
+        for item in stackView.arrangedSubviews {
+            stackView.removeArrangedSubview(item)
+        }
+        stackView.layoutIfNeeded()
     }
     
     private func addCircle(color: UIColor) {
@@ -59,17 +63,26 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func buttonAction(_ sender: UIButton) {
-        
         delegate?.click(day: date ?? Date())
     }
     
-    func set(day: String, selected: Bool, date: Date?) {
+    func set(day: String, selected: Bool, date: Date?, events: [UIColor]?) {
         self.date = date
         numberLabel.text = day
         numberLabel.font = .aller(style: .regular, size: 15)
         numberButton.setTitle(selected ? day : "", for: .normal)
         numberButton.selected(selected)
         numberButton.tag = Int(day) ?? 0
+        
+        for item in stackView.arrangedSubviews {
+            stackView.removeArrangedSubview(item)
+        }
+        stackView.layoutIfNeeded()
+        if let events = events {
+            for (index, item) in events.enumerated() where (index < 3) {
+                addCircle(color: item)
+            }
+        }
     }
     
     func setDay(name: String) {
@@ -78,5 +91,10 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         numberButton.setTitle("", for: .normal)
         numberButton.selected(false)
         self.date = nil
+        
+        for item in stackView.arrangedSubviews {
+            stackView.removeArrangedSubview(item)
+        }
+        stackView.layoutIfNeeded()
     }
 }
